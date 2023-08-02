@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SevaHands">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SevaHands.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

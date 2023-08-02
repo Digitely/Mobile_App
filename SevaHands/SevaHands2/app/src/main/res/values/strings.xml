@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SevaHands</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="profile">Profile</string>
+    <string name="donate">Donate</string>
+    <string name="contact">Contact</string>
+    <string name="explore">Explore</string>
+    <string name="title_activity_home">home</string>
+</resources>
