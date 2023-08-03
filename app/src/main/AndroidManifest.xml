@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SevaHandsVersionOne"
         tools:targetApi="31">
+
         <activity
             android:name=".DashBoard"
             android:exported="false"
@@ -19,10 +20,6 @@
             android:name=".Events"
             android:exported="false"
             android:label="@string/title_activity_events" />
-        <activity
-            android:name=".why"
-            android:exported="false"
-            android:label="@string/title_activity_why" />
         <activity
             android:name=".Services"
             android:exported="false"

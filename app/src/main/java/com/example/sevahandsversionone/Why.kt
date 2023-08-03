@@ -26,14 +26,14 @@ class Why : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
 
-                R.id.navigation_donate -> {
+                /* R.id.navigation_donate -> {
                     startActivity(Intent(applicationContext, Donate::class.java))
                     overridePendingTransition(R.transition.right, R.transition.left)
                     finish()
                     return@setOnItemSelectedListener true
                 }
 
-                /* R.id.navigation_Explore -> {
+                R.id.navigation_Explore -> {
                     startActivity(Intent(applicationContext, ServicesActivity::class.java))
                     overridePendingTransition(R.transition.right, R.transition.left)
                     finish()

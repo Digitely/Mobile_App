@@ -34,7 +34,7 @@ class Services : AppCompatActivity() {
                     finish()
                     return@setOnItemSelectedListener true
                 }
-                */
+
 
                 R.id.navigation_donate -> {
                     startActivity(Intent(applicationContext, Donate::class.java))
@@ -42,6 +42,8 @@ class Services : AppCompatActivity() {
                     finish()
                     return@setOnItemSelectedListener true
                 }
+
+                 */
             }
             return@setOnItemSelectedListener false
         }

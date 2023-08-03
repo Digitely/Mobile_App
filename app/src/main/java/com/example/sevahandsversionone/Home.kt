@@ -32,12 +32,14 @@ class Home : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
 
-                R.id.navigation_donate -> {
+               /* R.id.navigation_donate -> {
                     startActivity(Intent(applicationContext, Donate::class.java))
                     overridePendingTransition(R.transition.right, R.transition.left)
                     finish()
                     return@setOnItemSelectedListener true
                 }
+
+                */
             }
             return@setOnItemSelectedListener false
         }

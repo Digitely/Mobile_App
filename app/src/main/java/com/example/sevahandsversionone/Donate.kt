@@ -12,14 +12,16 @@ class Donate : AppCompatActivity() {
         setContentView(R.layout.activity_donate)
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
-        bottomNavigationView.selectedItemId = R.id.navigation_donate
+        //bottomNavigationView.selectedItemId = R.id.navigation_donate
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
 
-                R.id.navigation_donate -> {
+                /*R.id.navigation_donate -> {
                     return@setOnItemSelectedListener true
                 }
+
+                 */
 
                 R.id.navigation_home -> {
                     startActivity(Intent(applicationContext, MainActivity::class.java))
