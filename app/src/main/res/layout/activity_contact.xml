@@ -12,28 +12,28 @@
         android:id="@+id/nav_view"
         android:layout_width="355dp"
         android:layout_height="61dp"
-        android:layout_marginBottom="40dp"
         android:background="@drawable/navdesign"
         app:itemIconTint="@color/white"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu"
-        app:labelVisibilityMode="unlabeled"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.938"
+        app:menu="@menu/bottom_nav_menu" />
 
     <EditText
         android:id="@+id/messageBox"
-        android:layout_width="339dp"
-        android:layout_height="192dp"
+        android:layout_width="315dp"
+        android:layout_height="100dp"
         android:background="@color/transparent"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.321"
-        tools:ignore="LabelFor,SpeakableTextPresentCheck"
-        android:importantForAutofill="no" />
+        app:layout_constraintVertical_bias="0.432"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

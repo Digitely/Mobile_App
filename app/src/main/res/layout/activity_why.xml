@@ -21,4 +21,33 @@
         app:menu="@menu/bottom_nav_menu"
         app:labelVisibilityMode="unlabeled"/>
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="236dp"
+        android:layout_height="42dp"
+        android:background="@drawable/button"
+        android:text="Donate"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.935"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="338dp"
+        android:layout_height="255dp"
+        android:text="Nonprofit organizations depend on donations to promote their programs and help them reach their goals which is to meet the needs of the destitute, spread awareness and bring hope to the unfortunate.Seva Hands donors and sponsors initially began with our circle of family and friends who knew who we were as individuals and what we stood for. Upon hearing of our intentions, it was a “no-brainer” and they gladly continued to donate to us as an NPO. Transparency and Integrity are the foundation and core principles of our organization. In knowing that every rand and cent is going to a worthy cause. Having an accounting firm and a bank account where every penny is accounted for makes all our transactions
+foolproof."
+        android:textAlignment="center"
+        android:textColor="@color/lightblue"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.362" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

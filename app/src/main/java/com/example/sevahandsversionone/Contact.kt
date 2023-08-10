@@ -12,24 +12,33 @@ class Contact : AppCompatActivity() {
         setContentView(R.layout.activity_contact)
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
-        //bottomNavigationView.setSelectedItemId(R.id.navigation_contact);
+
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                /* R.id.navigation_contact ->
-                    return@setOnItemSelectedListener true */
+                R.id.navigation_contact -> {
+                    return@setOnItemSelectedListener true
+                }
 
-                R.id.navigation_home -> {
-                    startActivity(Intent(applicationContext, MainActivity::class.java))
+                R.id.navigation_dashboard -> {
+                    startActivity(Intent(applicationContext, DashBoard::class.java))
                     overridePendingTransition(R.transition.right, R.transition.left)
                     finish()
                     return@setOnItemSelectedListener true
                 }
 
 
-
+                R.id.navigation_home -> {
+                    startActivity(Intent(applicationContext, Home::class.java))
+                    overridePendingTransition(R.transition.right, R.transition.left)
+                    finish()
+                    return@setOnItemSelectedListener true
+                }
             }
-            return@setOnItemSelectedListener false
+
+                return@setOnItemSelectedListener false
+
         }
     }
 }
+

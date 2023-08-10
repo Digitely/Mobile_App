@@ -8,80 +8,122 @@
     tools:context=".Regindiv">
 
 
+    <EditText
+        android:id="@+id/indivEmail"
+        android:layout_width="309dp"
+        android:layout_height="35dp"
+        android:background="@drawable/reg_textbox"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.616"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/indivLName"
-        android:layout_width="317dp"
-        android:layout_height="33dp"
+        android:layout_width="309dp"
+        android:layout_height="35dp"
         android:background="@drawable/reg_textbox"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/indivCell"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.858"
+        app:layout_constraintVertical_bias="0.882"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/btnConPassword"
+        android:layout_width="309dp"
+        android:layout_height="35dp"
+        android:background="@drawable/reg_textbox"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/indivEmail"
+        app:layout_constraintVertical_bias="0.165"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/indivCell"
-        android:layout_width="317dp"
-        android:layout_height="34dp"
+        android:layout_width="309dp"
+        android:layout_height="35dp"
         android:background="@drawable/reg_textbox"
         android:ems="10"
         android:inputType="phone"
         app:layout_constraintBottom_toTopOf="@+id/indivEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.878"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/indivEmail"
-        android:layout_width="317dp"
-        android:layout_height="33dp"
+        android:id="@+id/indivFName"
+        android:layout_width="309dp"
+        android:layout_height="35dp"
         android:background="@drawable/reg_textbox"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/indivLName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.616"
+        app:layout_constraintVertical_bias="0.836"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/btnRegIndiv"
         android:layout_width="78dp"
         android:layout_height="43dp"
+        android:layout_marginBottom="120dp"
         android:background="@drawable/button"
         android:text="register"
         android:textSize="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintHorizontal_bias="0.849"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/indivEmail"
-        app:layout_constraintVertical_bias="0.044"
+        app:layout_constraintTop_toBottomOf="@+id/btnConPassword"
         tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/indivFName"
-        android:layout_width="317dp"
-        android:layout_height="33dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/reg_textbox"
-        android:ems="10"
-
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/indivLName"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/indivlink"
+        android:layout_width="127dp"
+        android:layout_height="22dp"
+        android:text="Individual Donor"
+        android:textColor="@color/lightblue"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/indivFName"
+        app:layout_constraintEnd_toStartOf="@+id/orglink"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        app:layout_constraintVertical_bias="0.623" />
+
+    <TextView
+        android:id="@+id/orglink"
+        android:layout_width="104dp"
+        android:layout_height="22dp"
+        android:text="/Company"
+        android:textColor="@color/lightblue"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/indivFName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.612"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.624" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

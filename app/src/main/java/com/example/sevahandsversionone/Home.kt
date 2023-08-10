@@ -25,6 +25,13 @@ class Home : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
 
+                R.id.navigation_dashboard -> {
+                    startActivity(Intent(applicationContext, DashBoard::class.java))
+                    overridePendingTransition(R.transition.right, R.transition.left)
+                    finish()
+                    return@setOnItemSelectedListener true
+                }
+
                 R.id.navigation_contact -> {
                     startActivity(Intent(applicationContext, Contact::class.java))
                     overridePendingTransition(R.transition.right, R.transition.left)
@@ -32,14 +39,7 @@ class Home : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
 
-               /* R.id.navigation_donate -> {
-                    startActivity(Intent(applicationContext, Donate::class.java))
-                    overridePendingTransition(R.transition.right, R.transition.left)
-                    finish()
-                    return@setOnItemSelectedListener true
-                }
 
-                */
             }
             return@setOnItemSelectedListener false
         }
