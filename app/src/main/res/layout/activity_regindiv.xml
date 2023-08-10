@@ -7,20 +7,7 @@
     android:background="@drawable/regindiv"
     tools:context=".Regindiv">
 
-    <EditText
-        android:id="@+id/indivFName"
-        android:layout_width="317dp"
-        android:layout_height="33dp"
-        android:background="@drawable/reg_textbox"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/indivLName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.834"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
 
     <EditText
         android:id="@+id/indivLName"
@@ -81,4 +68,20 @@
         app:layout_constraintTop_toBottomOf="@+id/indivEmail"
         app:layout_constraintVertical_bias="0.044"
         tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/indivFName"
+        android:layout_width="317dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/reg_textbox"
+        android:ems="10"
+
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/indivLName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
