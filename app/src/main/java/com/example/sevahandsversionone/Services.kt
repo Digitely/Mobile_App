@@ -13,13 +13,11 @@ class Services : AppCompatActivity() {
         setContentView(R.layout.activity_services)
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
-        // bottomNavigationView.setSelectedItemId(R.id.navigation_Explore);
+
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                /* R.id.navigation_Explore ->
-                    return@setOnItemSelectedListener true
-                */
+
 
                 R.id.navigation_home -> {
                     startActivity(Intent(applicationContext, MainActivity::class.java))
@@ -28,22 +26,7 @@ class Services : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
 
-                /* R.id.navigation_contact -> {
-                    startActivity(Intent(applicationContext, ContactActivity::class.java))
-                    overridePendingTransition(R.transition.right, R.transition.left)
-                    finish()
-                    return@setOnItemSelectedListener true
-                }
 
-
-                R.id.navigation_donate -> {
-                    startActivity(Intent(applicationContext, Donate::class.java))
-                    overridePendingTransition(R.transition.right, R.transition.left)
-                    finish()
-                    return@setOnItemSelectedListener true
-                }
-
-                 */
             }
             return@setOnItemSelectedListener false
         }

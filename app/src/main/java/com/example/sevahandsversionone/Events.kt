@@ -13,16 +13,10 @@ class Events : AppCompatActivity() {
         setContentView(R.layout.activity_events)
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
-     //   bottomNavigationView.selectedItemId = R.id.navigation_events
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                /*
-                R.id.navigation_events -> {
-                    return@setOnItemSelectedListener true
-                }
 
-                 */
 
                 R.id.navigation_home -> {
                     startActivity(Intent(applicationContext, MainActivity::class.java))
@@ -30,9 +24,6 @@ class Events : AppCompatActivity() {
                     finish()
                     return@setOnItemSelectedListener true
                 }
-
-
-
             }
             return@setOnItemSelectedListener false
         }

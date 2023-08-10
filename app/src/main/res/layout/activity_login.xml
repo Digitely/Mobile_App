@@ -9,12 +9,14 @@
 
 
     <EditText
-        android:id="@+id/username"
-
-        android:layout_width="276dp"
+        android:id="@+id/userEmail"
+        android:layout_width="275dp"
         android:layout_height="42dp"
-        android:background="@drawable/text_box"
+        android:background="@drawable/button"
+        android:drawableStart="@drawable/baseline_email_24"
         android:ems="10"
+        android:hint="Email"
+        android:textColorHint="@color/grey"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,21 +24,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.531"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        tools:ignore="MissingPrefix,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="278dp"
+        android:hint="Password"
+        android:textColorHint="@color/grey"
+        android:layout_width="275dp"
         android:layout_height="42dp"
         android:background="@drawable/text_box"
+        android:drawableStart="@drawable/baseline_password_24"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username"
-        app:layout_constraintVertical_bias="0.07"
+        app:layout_constraintTop_toBottomOf="@+id/userEmail"
+        app:layout_constraintVertical_bias="0.103"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <Button
@@ -51,8 +56,34 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.873"
         tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/reglink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Account"
+        android:textColor="@color/redpink"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintVertical_bias="0.035" />
+
+    <TextView
+        android:id="@+id/forgotPass"
+        android:layout_width="115dp"
+        android:layout_height="20dp"
+        android:text="Forgot password?"
+        android:textColor="@color/redpink"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toEndOf="@+id/reglink"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
