@@ -25,12 +25,12 @@ class Regindiv : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_regindiv)
 
-    fullName = findViewById(R.id.indivFName)
-    conNumber = findViewById(R.id.btnConPassword)
-    userEmail = findViewById(R.id.indivCell)
-    Password = findViewById(R.id.indivLName)
-    conPassword = findViewById(R.id.btnConPassword)
-    regbtn = findViewById(R.id.btnRegIndiv)
+    fullName = findViewById(R.id.editTextTextPassword5)
+    conNumber = findViewById(R.id.editTextTextPassword3)
+    userEmail = findViewById(R.id.editTextTextPassword2)
+    Password = findViewById(R.id.editTextTextPassword)
+    conPassword = findViewById(R.id.editTextTextPassword4)
+    regbtn = findViewById(R.id.button3)
     mAuth = FirebaseAuth.getInstance()
     regbtn.setOnClickListener{
       registerUser()
