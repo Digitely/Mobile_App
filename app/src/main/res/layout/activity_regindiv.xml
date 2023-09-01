@@ -4,21 +4,21 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".regindiv">
+  >
 
   <TextView
     android:id="@+id/textView17"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Click on your preferred account"
-    android:textSize="15dp"
     android:textColor="@color/black"
+    android:textSize="15dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.312"
+    app:layout_constraintHorizontal_bias="0.214"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.153"
+    app:layout_constraintVertical_bias="0.15"
     tools:ignore="TextSizeCheck" />
 
   <TextView
