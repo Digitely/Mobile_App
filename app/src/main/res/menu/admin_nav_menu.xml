@@ -19,6 +19,11 @@
         android:icon="@drawable/baseline_volunteer_activism_24"
         android:title="Contact" />
 
+  <item
+    android:id="@+id/navigation_users"
+    android:icon="@drawable/baseline_supervised_user_circle_24"
+    android:title="Contact" />
+
 
 
 </menu>

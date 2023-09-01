@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/home"
+    android:background="@drawable/background"
     android:paddingTop="?attr/actionBarSize">
 
 
@@ -23,6 +23,46 @@
         app:layout_constraintVertical_bias="0.929"
         app:menu="@menu/admin_nav_menu" />
 
+  <Button
+    android:id="@+id/viewEvent"
+    android:layout_width="279dp"
+    android:layout_height="47dp"
+    android:background="@drawable/button"
+    android:text="Manage Events"
+    app:layout_constraintBottom_toTopOf="@+id/nav_view"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.551"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.761"
+    tools:ignore="TouchTargetSizeCheck" />
+
+  <Button
+    android:id="@+id/viewVolunteers"
+    android:layout_width="279dp"
+    android:layout_height="47dp"
+    android:background="@drawable/button"
+    android:text="View Volunteers"
+    app:layout_constraintBottom_toTopOf="@+id/nav_view"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.551"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/viewEvent"
+    app:layout_constraintVertical_bias="0.289"
+    tools:ignore="TouchTargetSizeCheck" />
+
+
+
+  <ImageView
+    android:id="@+id/imageView3"
+    android:layout_width="266dp"
+    android:layout_height="366dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.134"
+    app:srcCompat="@drawable/home" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

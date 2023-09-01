@@ -24,10 +24,11 @@
 
   <ImageView
     android:id="@+id/imageView4"
-    android:layout_width="249dp"
-    android:layout_height="152dp"
+    android:layout_width="255dp"
+    android:layout_height="162dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.442"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.0"
@@ -39,10 +40,10 @@
     android:layout_height="185dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.062"
+    app:layout_constraintHorizontal_bias="0.171"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.349"
+    app:layout_constraintVertical_bias="0.346"
     app:srcCompat="@drawable/galbtn" />
 
   <ImageView
@@ -51,10 +52,10 @@
     android:layout_height="185dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.89"
+    app:layout_constraintHorizontal_bias="0.859"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.349"
+    app:layout_constraintVertical_bias="0.344"
     app:srcCompat="@drawable/eventsbtn" />
 
   <ImageView
@@ -63,10 +64,10 @@
     android:layout_height="185dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.062"
+    app:layout_constraintHorizontal_bias="0.171"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.793"
+    app:layout_constraintVertical_bias="0.765"
     app:srcCompat="@drawable/donatebtn" />
 
   <ImageView
@@ -75,10 +76,10 @@
     android:layout_height="185dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.89"
+    app:layout_constraintHorizontal_bias="0.859"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.785"
+    app:layout_constraintVertical_bias="0.765"
     app:srcCompat="@drawable/locbtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
