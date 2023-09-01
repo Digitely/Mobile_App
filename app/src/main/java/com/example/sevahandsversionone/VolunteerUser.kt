@@ -1,4 +1,4 @@
-package com.example.sevahandsversionone.ui
+package com.example.sevahandsversionone
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
