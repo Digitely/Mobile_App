@@ -50,16 +50,26 @@
         app:layout_constraintVertical_bias="0.289"
         tools:ignore="TouchTargetSizeCheck" />
 
-  <ImageView
-    android:id="@+id/imageView11"
-    android:layout_width="266dp"
-    android:layout_height="366dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.493"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.0"
-    app:srcCompat="@drawable/home" />
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="266dp"
+        android:layout_height="366dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/home_large" />
+
+    <Button
+        android:id="@+id/TempAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/temp_admin"
+        app:layout_constraintBottom_toTopOf="@+id/btnExplore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

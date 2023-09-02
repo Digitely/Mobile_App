@@ -2,6 +2,7 @@ package com.example.sevahandsversionone
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.sevahandsversionone.databinding.ActivityHomeBinding
@@ -18,6 +19,15 @@ class Home : AppCompatActivity() {
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
         bottomNavigationView.selectedItemId = R.id.navigation_home
+
+        val tempAdminButton = findViewById<Button>(R.id.TempAdmin)
+
+        // Set an OnClickListener for the button
+        tempAdminButton.setOnClickListener {
+            // Handle the button click here
+            val intent = Intent(this, AdminHome::class.java)
+            startActivity(intent) // Start the AdminActivity
+        }
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {

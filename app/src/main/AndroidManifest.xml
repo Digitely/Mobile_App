@@ -37,10 +37,7 @@
             android:name=".Home"
             android:exported="false"
             android:label="@string/title_activity_home" />
-        <activity
-            android:name=".Donate"
-            android:exported="false"
-            android:label="@string/title_activity_donate" />
+
         <activity
             android:name=".Contact"
             android:exported="false"
