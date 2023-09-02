@@ -12,10 +12,19 @@
         android:theme="@style/Theme.SevaHandsVersionOne"
         tools:targetApi="31">
 
+
         <activity
             android:name=".DashBoard"
             android:exported="false"
             android:label="@string/title_activity_dash_board" />
+        <activity
+            android:name=".admin_events"
+            android:exported="false"
+            android:label="Admin Events"/>
+        <activity
+            android:name=".AdminHome"
+            android:exported="false"
+            android:label="Admin Home"/>
         <activity
             android:name=".Events"
             android:exported="false"
