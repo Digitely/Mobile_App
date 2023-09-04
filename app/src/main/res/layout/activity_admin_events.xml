@@ -9,39 +9,31 @@
     android:padding="16dp"
     tools:context=".admin_events">
 
-    <Button
-        android:id="@+id/buttonSelectDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/select_date"
-        />
-
-    <EditText
-        android:id="@+id/editTextDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Description"
-        />
-
-    <EditText
-        android:id="@+id/editTextLocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Location (e.g., [90° N, 90° E])"
-        />
-
-    <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Name"
-        />
-
-    <Button
-        android:id="@+id/buttonAddEvent"
+    <!-- Add a title for the page -->
+    <TextView
+        android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Event"
+        android:text="Admin Events"
+        android:textSize="24sp"
         android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        />
+
+
+    <!-- RecyclerView to display events -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewEvents"
+        android:layout_width="match_parent"
+        android:layout_height="326dp"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/buttonAddEventPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Event"
+        android:layout_marginTop="16dp"
+        android:onClick="navigateToAddEventPage"
         />
 </LinearLayout>
