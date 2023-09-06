@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.Navigation.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.sevahandsversionone.databinding.ActivityHomeBinding
 
@@ -29,6 +30,13 @@ class Home : AppCompatActivity() {
             startActivity(intent) // Start the AdminActivity
         }
 
+        val btnExplore = findViewById<Button>(R.id.btnExplore)
+
+        // Set an OnClickListener to navigate to the services page
+        btnExplore.setOnClickListener {
+            val intent = Intent(this, Services::class.java)
+            startActivity(intent) // Start the Services
+        }
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_home -> {
