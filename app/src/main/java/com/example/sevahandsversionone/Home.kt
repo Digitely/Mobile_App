@@ -4,9 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.sevahandsversionone.databinding.ActivityHomeBinding
-
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class Home : AppCompatActivity() {
 
@@ -29,6 +28,8 @@ class Home : AppCompatActivity() {
             startActivity(intent) // Start the AdminActivity
         }
 
+
+
         val btnExplore = findViewById<Button>(R.id.btnExplore)
 
         // Set an OnClickListener to navigate to the services page
@@ -41,24 +42,48 @@ class Home : AppCompatActivity() {
                 R.id.navigation_home -> {
                     return@setOnItemSelectedListener true
                 }
-
                 R.id.navigation_dashboard -> {
                     startActivity(Intent(applicationContext, DashBoard::class.java))
                     overridePendingTransition(R.transition.right, R.transition.left)
                     finish()
                     return@setOnItemSelectedListener true
                 }
-
                 R.id.navigation_contact -> {
                     startActivity(Intent(applicationContext, Contact::class.java))
                     overridePendingTransition(R.transition.right, R.transition.left)
                     finish()
                     return@setOnItemSelectedListener true
                 }
-
-
             }
             return@setOnItemSelectedListener false
         }
     }
+
+
+    private val navListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.navigation_home -> {
+                // Start AlgorithmActivity
+                val intent = Intent(this, Home::class.java)
+                startActivity(intent)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_dashboard -> {
+                // Start CourseActivity
+                val intent = Intent(this, DashBoard::class.java)
+                startActivity(intent)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_contact -> {
+                // Start ProfileActivity
+                val intent = Intent(this, Contact::class.java)
+                startActivity(intent)
+                return@OnNavigationItemSelectedListener true
+            }
+            else -> return@OnNavigationItemSelectedListener false
+        }
+    }
+
+
+
 }

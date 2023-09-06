@@ -4,6 +4,8 @@ package com.example.sevahandsversionone
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class Services : AppCompatActivity() {
@@ -30,5 +32,19 @@ class Services : AppCompatActivity() {
             }
             return@setOnItemSelectedListener false
         }
+
+
+        // Find the RecyclerView in your layout
+        val recyclerView = findViewById<RecyclerView>(R.id.RC_View)
+
+// Create an instance of the ServiceAdapter and pass your serviceItems
+        val adapter = ServiceAdapter(serviceItems)
+
+// Set the adapter for the RecyclerView
+        recyclerView.adapter = adapter
+
+// Set the layout manager for the RecyclerView (e.g., LinearLayoutManager)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
     }
 }
