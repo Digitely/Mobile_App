@@ -6,6 +6,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
+import com.google.firebase.auth.FirebaseAuth
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,16 +22,28 @@ class MainActivity : AppCompatActivity() {
 
         imgLogo = findViewById(R.id.splashImg)
 
-        // timer settings
-        val runSplash = Timer()
-        val showSplash = object : TimerTask() {
-            override fun run() {
-                finish()
-                val intent = Intent(this@MainActivity, Login::class.java)
-                startActivity(intent)
+        val auth = FirebaseAuth.getInstance()
+        val currentUser = auth.currentUser
+
+        if (currentUser != null) {
+            // User is already signed in, redirect to the home page
+            val intent = Intent(this@MainActivity, Home::class.java)
+            startActivity(intent)
+            finish()
+        } else {
+            // User is not signed in, proceed with the timer task
+            val showSplash = object : TimerTask() {
+                override fun run() {
+                    finish()
+                    val intent = Intent(this@MainActivity, Login::class.java)
+                    startActivity(intent)
+                }
             }
+
+            // Schedule the timer task to show the login page
+            Timer().schedule(showSplash, delay) // Adjust the delay as needed
         }
 
-        runSplash.schedule(showSplash, delay)
+
     }
-}
+    }
