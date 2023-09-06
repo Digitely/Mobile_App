@@ -72,27 +72,29 @@
         app:layout_constraintTop_toBottomOf="@+id/password"
         app:layout_constraintVertical_bias="0.035" />
 
+
     <TextView
         android:id="@+id/forgotPass"
-        android:layout_width="115dp"
-        android:layout_height="20dp"
+        android:layout_width="127dp"
+        android:layout_height="23dp"
         android:text="Forgot password?"
         android:textColor="@color/redpink"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toEndOf="@+id/reglink"
         app:layout_constraintTop_toBottomOf="@+id/password"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="405dp"
-        android:layout_height="358dp"
-        app:layout_constraintBottom_toTopOf="@+id/password"
+        android:id="@+id/imageView7"
+        android:layout_width="273dp"
+        android:layout_height="269dp"
+        app:layout_constraintBottom_toTopOf="@+id/userEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+
         app:layout_constraintVertical_bias="0.632"
         app:srcCompat="@drawable/homebackg" />
 
