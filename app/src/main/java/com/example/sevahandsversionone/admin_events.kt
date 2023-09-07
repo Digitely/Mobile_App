@@ -31,7 +31,7 @@ class admin_events : AppCompatActivity() {
         // Retrieve data from Firebase Firestore
         val db = FirebaseFirestore.getInstance()
         val eventsCollection = db.collection("Events")
-
+//this is a test 
         eventsCollection.get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
