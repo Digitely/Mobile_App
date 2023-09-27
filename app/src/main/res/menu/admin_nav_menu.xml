@@ -11,18 +11,18 @@
     <item
         android:id="@+id/navigation_events"
         android:icon="@drawable/baseline_event_note_24"
-        android:title="@string/title_dashboard" />
+        android:title="Manage Events" />
 
 
     <item
         android:id="@+id/navigation_volunteers"
         android:icon="@drawable/baseline_volunteer_activism_24"
-        android:title="Contact" />
+        android:title="Manage Volunteers" />
 
   <item
     android:id="@+id/navigation_users"
     android:icon="@drawable/baseline_supervised_user_circle_24"
-    android:title="Contact" />
+    android:title="Manage Users" />
 
 
 

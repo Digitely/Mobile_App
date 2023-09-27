@@ -12,9 +12,12 @@
         android:theme="@style/Theme.SevaHandsVersionOne"
         tools:targetApi="31">
         <activity
+            android:name=".admin_users"
+            android:exported="false" />
+        <activity
             android:name=".AddEvents"
             android:exported="false"
-            android:label="Event Details"/>
+            android:label="Event Details" />
         <activity
             android:name=".DashBoard"
             android:exported="false"
@@ -48,10 +51,6 @@
             android:name=".Home"
             android:exported="false"
             android:label="Home" />
-
-
-
-
         <activity
             android:name=".Contact"
             android:exported="false"
