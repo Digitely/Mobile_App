@@ -29,10 +29,19 @@
 
         app:srcCompat="@drawable/logotrans" />
 
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+
+        android:text="Scheduled events for Seva Hands:" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewEvents"
         android:layout_width="match_parent"
-        android:layout_height="481dp" />
+        android:layout_height="453dp"
+        android:background="@color/white" />
 
     <Button
         android:id="@+id/buttonAddEventPage"

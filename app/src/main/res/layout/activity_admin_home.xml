@@ -51,23 +51,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewEvent"
-        app:layout_constraintVertical_bias="0.558"
+        app:layout_constraintVertical_bias="0.246"
         tools:ignore="TouchTargetSizeCheck" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="266dp"
-        android:layout_height="366dp"
+        android:layout_width="307dp"
+        android:layout_height="310dp"
+        android:contentDescription="@string/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
 
+        app:layout_constraintVertical_bias="0.133"
         app:srcCompat="@drawable/home_large"
-        tools:ignore="ImageContrastCheck"
-        android:contentDescription="@string/logo" />
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/textViewLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:textSize="18dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.186" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
