@@ -7,33 +7,40 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@drawable/bgevents"
     tools:context=".admin_events">
 
-    <!-- Add a title for the page -->
     <TextView
-        android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Admin Events"
-        android:textSize="24sp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
-        />
+        android:text="Seva Hands Upcoming Events"
+        android:textColor="@color/redish"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="65dp"/>
 
 
     <!-- RecyclerView to display events -->
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+
+        app:srcCompat="@drawable/logotrans" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewEvents"
         android:layout_width="match_parent"
-        android:layout_height="546dp"
-        android:layout_marginTop="16dp" />
+        android:layout_height="481dp" />
 
     <Button
         android:id="@+id/buttonAddEventPage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Event"
         android:layout_marginTop="16dp"
         android:onClick="navigateToAddEventPage"
-        />
+        android:text="Add Event" />
+
+
 </LinearLayout>

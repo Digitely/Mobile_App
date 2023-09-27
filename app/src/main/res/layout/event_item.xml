@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@drawable/bgevents"
+    tools:context=".admin_events">
 
-    <!-- TextViews for displaying event data -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seva Hands Upcoming Events"
+        android:textColor="@color/redish"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="65dp"/>
+
+
+    <!-- RecyclerView to display events -->
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+
+        app:srcCompat="@drawable/logotrans" />
     <TextView
         android:id="@+id/textViewEventName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Event Name"
+        android:text="Event Name:"
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"/>
 
@@ -19,45 +44,55 @@
         android:id="@+id/textViewEventDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:text="Event Description"
-        android:textSize="14sp"
-        android:layout_marginBottom="4dp"/>
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/textViewEventLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Event Location"
-        android:textSize="14sp"
-        android:layout_marginBottom="4dp"/>
+        android:text="Event Location:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/textViewEventDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Event Date"
-        android:textSize="14sp"
-        android:layout_marginBottom="4dp"/>
+        android:textColor="@color/black"
+        android:text="Event Date:"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/textViewEventTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Event Time"
-        android:textSize="14sp"
-        android:layout_marginBottom="4dp"/>
+        android:textColor="@color/black"
+        android:text="Event Time:"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"/>
 
     <!-- Edit and Delete Buttons -->
     <Button
         android:id="@+id/buttonEditEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit"/>
+        android:text="Edit"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="290dp"/>
 
     <Button
         android:id="@+id/buttonDeleteEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete"/>
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="-48dp"
+        android:text="Delete" />
+
 
 </LinearLayout>
