@@ -24,17 +24,34 @@ class Events : AppCompatActivity() {
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
 
+        // Control the bottom navigation bar
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.navigation_home -> {
-                    startActivity(Intent(applicationContext, MainActivity::class.java))
+                R.id.navigation_dashboard -> {
+                    startActivity(Intent(applicationContext, DashBoard::class.java))
                     overridePendingTransition(R.transition.right, R.transition.left)
                     finish()
-                    return@setOnItemSelectedListener true
+                    // Handle dashboard selection
+                    true
                 }
+                R.id.navigation_contact -> {
+                    // Start the Contact activity
+                    startActivity(Intent(applicationContext, Contact::class.java))
+                    overridePendingTransition(R.transition.right, R.transition.left)
+                    finish()
+                    true
+                }
+                R.id.navigation_home -> {
+                    // Start the Home activity
+                    startActivity(Intent(applicationContext, Home::class.java))
+                    overridePendingTransition(R.transition.right, R.transition.left)
+                    finish()
+                    true
+                }
+                else -> false
             }
-            return@setOnItemSelectedListener false
         }
+
 
         recyclerView = findViewById(R.id.recycler_view)
 
