@@ -1,3 +1,4 @@
+import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
@@ -60,6 +61,7 @@ class ActivitiesActivity : AppCompatActivity() {
     private lateinit var adapter: ActivitiesAdapter
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_events)

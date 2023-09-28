@@ -2,6 +2,7 @@ package com.example.sevahandsversionone
 
 import ActivitiesAdapter
 import ActivityItem
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +17,7 @@ class Events : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ActivitiesAdapter
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_events)
