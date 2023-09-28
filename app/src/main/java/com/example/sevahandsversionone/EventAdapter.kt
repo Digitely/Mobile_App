@@ -27,10 +27,21 @@ class EventAdapter(private val events: List<Event>) : RecyclerView.Adapter<Event
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        // Initialize TextViews and buttons here
+        private val eventNameTextView: TextView = itemView.findViewById(R.id.textViewEventName)
+        private val eventDescriptionTextView: TextView = itemView.findViewById(R.id.textViewEventDescription)
+        private val eventLocationTextView: TextView = itemView.findViewById(R.id.textViewEventLocation)
+        private val eventDateTextView: TextView = itemView.findViewById(R.id.textViewEventDate)
+        private val eventTimeTextView: TextView = itemView.findViewById(R.id.textViewEventTime)
+        private val editButton: Button = itemView.findViewById(R.id.buttonEditEvent)
+        private val deleteButton: Button = itemView.findViewById(R.id.buttonDeleteEvent)
+
 
         fun bind(event: Event) {
-            // Bind event data to TextViews
+            eventNameTextView.text = "Event Name: ${event.name}"
+            eventDescriptionTextView.text = "Event Description: ${event.description}"
+            eventLocationTextView.text = "Event Location: ${event.location}"
+            eventDateTextView.text = "Event Date: ${event.date}"
+            eventTimeTextView.text = "Event Time: ${event.Time}"
             // Set click listeners for edit and delete buttons
         }
     }
