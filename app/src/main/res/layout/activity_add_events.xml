@@ -15,7 +15,7 @@
         android:id="@+id/detailstextView"
         android:layout_width="345dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="17dp"
         android:layout_marginTop="30dp"
         android:text="Enter details for the next Seva Hands event:"
         android:textColor="@color/black"
@@ -24,37 +24,37 @@
 
     <EditText
         android:id="@+id/editTextName"
-        android:layout_width="323dp"
+        android:layout_width="326dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="14dp"
         android:background="@drawable/text_box2"
         android:hint=" Name"
-        android:textColorHint="@color/grey"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColorHint="@color/grey" />
 
 
     <EditText
         android:id="@+id/editTextDescription"
-        android:layout_width="323dp"
+        android:layout_width="326dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="14dp"
         android:background="@drawable/text_box2"
         android:hint=" Description"
-        android:textColorHint="@color/grey"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColorHint="@color/grey" />
 
     <EditText
         android:id="@+id/editTextLocation"
-        android:layout_width="323dp"
+        android:layout_width="326dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="14dp"
         android:background="@drawable/text_box2"
         android:hint=" Location (e.g., [90° N, 90° E])"
-        android:textColorHint="@color/grey"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColorHint="@color/grey" />
 
 
     <Button
@@ -73,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="1dp"
         android:layout_marginTop="325dp"
         android:background="@drawable/button"
         android:text="Add Event" />

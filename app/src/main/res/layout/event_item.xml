@@ -72,14 +72,14 @@
         android:text="Edit"
         android:background="@drawable/button"
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="250dp"/>
+        android:layout_marginLeft="220dp"/>
 
     <Button
         android:id="@+id/buttonDeleteEvent"
         android:layout_width="wrap_content"
         android:background="@drawable/button"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="125dp"
         android:layout_marginTop="-48dp"
         android:text="Delete" />
 
