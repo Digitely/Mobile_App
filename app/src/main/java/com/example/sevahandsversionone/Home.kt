@@ -1,11 +1,15 @@
 package com.example.sevahandsversionone
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sevahandsversionone.databinding.ActivityHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+
 
 class Home : AppCompatActivity() {
 
@@ -21,7 +25,27 @@ class Home : AppCompatActivity() {
 
         val tempAdminButton = findViewById<Button>(R.id.TempAdmin)
 
+        val donate = findViewById<Button>(R.id.btnDonate)
+
+        donate.setOnClickListener {
+            // Handle the button click here
+
+
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.paypal.com/donate/?hosted_button_id=9A7RM3N4NQV3G"))
+            startActivity(browserIntent)
+        }
+
+        val textViewLogout = findViewById<TextView>(R.id.textViewLogout);
+        textViewLogout.setOnClickListener {
+            // Handle the button click here
+            FirebaseAuth.getInstance().signOut();
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent) // Start the login page
+        }
+
+
         // Set an OnClickListener for the button
+
         tempAdminButton.setOnClickListener {
             // Handle the button click here
             val intent = Intent(this, AdminHome::class.java)
