@@ -4,7 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Label
 
 class AdminHome : AppCompatActivity() {
     private lateinit var viewEventButton: Button // Declare the button variable
@@ -23,6 +26,15 @@ class AdminHome : AppCompatActivity() {
             // Start the AdminEventsActivity when the button is clicked
             val intent = Intent(this, admin_events::class.java)
             startActivity(intent)
+
+            val textViewLogout = findViewById<TextView>(R.id.textViewLogout);
+            textViewLogout.setOnClickListener {
+                // Handle the button click here
+                FirebaseAuth.getInstance().signOut();
+                val intent = Intent(this, Login::class.java)
+                startActivity(intent) // Start the login page
+            }
+
         }
 
 
