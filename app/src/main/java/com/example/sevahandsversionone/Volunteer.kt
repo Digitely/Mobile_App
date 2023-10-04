@@ -1,7 +1,6 @@
 package com.example.sevahandsversionone
 
 data class Volunteer(
-    val ID :String,
     val company: String,
     val email: String,
     val item: String,
@@ -12,5 +11,5 @@ data class Volunteer(
     val type: String
 ) {
     // Empty constructor required for Firebase
-    constructor() : this("", "", "", "", "", "", "", "", "")
+    constructor() : this( "", "", "", "", "", "", "", "")
 }

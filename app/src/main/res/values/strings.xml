@@ -24,4 +24,5 @@
     <string name="select_date">Select Date</string>
     <string name="welcome_to_our_services">Welcome to Our Services</string>
     <string name="lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_sed_vehicula_dui_sed_vestibulum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula dui sed vestibulum.</string>
+    <string name="users_that_have_applied_to_volunteers">Users that have applied to volunteers</string>
 </resources>

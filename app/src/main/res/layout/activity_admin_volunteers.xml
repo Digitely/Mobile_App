@@ -13,7 +13,8 @@
         android:id="@+id/textView10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Users that have applied to volunteers"
+        android:textSize="30sp"
+        android:text="@string/users_that_have_applied_to_volunteers"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,13 +22,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="248dp"
-        android:layout_height="331dp"
+        android:layout_width="389dp"
+        android:layout_height="465dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.727"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

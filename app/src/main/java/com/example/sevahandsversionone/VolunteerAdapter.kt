@@ -40,6 +40,9 @@ class VolunteerAdapter(
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val nameTextView: TextView = itemView.findViewById(R.id.textViewName)
+        private val companyTextView: TextView = itemView.findViewById(R.id.companyTextView)
+        private val itemTextView: TextView = itemView.findViewById(R.id.itemTextView)
+        private val quantityTextView: TextView = itemView.findViewById(R.id.quantityTextView)
         private val emailTextView: TextView = itemView.findViewById(R.id.textViewEmail)
         private val numberTextView: TextView = itemView.findViewById(R.id.textViewNumber)
         private val messageTextView: TextView = itemView.findViewById(R.id.textViewMessage)
@@ -47,12 +50,72 @@ class VolunteerAdapter(
         val btnDelete: Button = itemView.findViewById(R.id.btnDelete)
 
         fun bind(volunteer: Volunteer) {
-            nameTextView.text = "Name: ${volunteer.name}"
-            emailTextView.text = "Email: ${volunteer.email}"
-            numberTextView.text = "Number: ${volunteer.number}"
-            messageTextView.text = "Message: ${volunteer.message}"
-            typeTextView.text = "Type: ${volunteer.type}"
+            // Set name TextView
+            if (volunteer.name.isNotEmpty()) {
+                nameTextView.text = "Name: ${volunteer.name}"
+                nameTextView.visibility = View.VISIBLE
+            } else {
+                nameTextView.visibility = View.GONE
+            }
+
+            // Set company TextView
+            if (volunteer.company.isNotEmpty()) {
+                companyTextView.text = "Company: ${volunteer.company}"
+                companyTextView.visibility = View.VISIBLE
+            } else {
+                companyTextView.visibility = View.GONE
+            }
+
+            // Set item TextView
+            if (volunteer.item.isNotEmpty()) {
+                itemTextView.text = "Item: ${volunteer.item}"
+                itemTextView.visibility = View.VISIBLE
+            } else {
+                itemTextView.visibility = View.GONE
+            }
+
+            // Set quantity TextView
+            if (volunteer.quantity.isNotEmpty()) {
+                quantityTextView.text = "Quantity: ${volunteer.quantity}"
+                quantityTextView.visibility = View.VISIBLE
+            } else {
+                quantityTextView.visibility = View.GONE
+            }
+
+            // Set email TextView
+            if (volunteer.email.isNotEmpty()) {
+                emailTextView.text = "Email: ${volunteer.email}"
+                emailTextView.visibility = View.VISIBLE
+            } else {
+                emailTextView.visibility = View.GONE
+            }
+
+            // Set number TextView
+            if (volunteer.number.isNotEmpty()) {
+                numberTextView.text = "Number: ${volunteer.number}"
+                numberTextView.visibility = View.VISIBLE
+            } else {
+                numberTextView.visibility = View.GONE
+            }
+
+            // Set message TextView
+            if (volunteer.message.isNotEmpty()) {
+                messageTextView.text = "Message: ${volunteer.message}"
+                messageTextView.visibility = View.VISIBLE
+            } else {
+                messageTextView.visibility = View.GONE
+            }
+
+            // Set type TextView
+            if (volunteer.type.isNotEmpty()) {
+                typeTextView.text = "Type: ${volunteer.type}"
+                typeTextView.visibility = View.VISIBLE
+            } else {
+                typeTextView.visibility = View.GONE
+            }
         }
     }
+
+
 }
 
