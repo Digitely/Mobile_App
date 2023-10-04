@@ -34,6 +34,10 @@
             android:exported="false"
             android:label="Admin Home" />
         <activity
+            android:name=".admin_volunteers"
+            android:exported="false"
+            android:label="Admin volunteers" />
+        <activity
             android:name=".Events"
             android:exported="false"
             android:label="Events" />

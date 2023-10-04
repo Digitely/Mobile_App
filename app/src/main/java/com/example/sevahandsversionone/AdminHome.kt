@@ -11,6 +11,8 @@ import com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Label
 
 class AdminHome : AppCompatActivity() {
     private lateinit var viewEventButton: Button // Declare the button variable
+    private lateinit var viewVolunteersButton: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_home)
@@ -26,6 +28,7 @@ class AdminHome : AppCompatActivity() {
             // Start the AdminEventsActivity when the button is clicked
             val intent = Intent(this, admin_events::class.java)
             startActivity(intent)
+                         }
 
             val textViewLogout = findViewById<TextView>(R.id.textViewLogout);
             textViewLogout.setOnClickListener {
@@ -35,7 +38,16 @@ class AdminHome : AppCompatActivity() {
                 startActivity(intent) // Start the login page
             }
 
-        }
+            viewVolunteersButton = findViewById(R.id.viewVolunteers)
+
+            // Set OnClickListener for the viewVolunteersButton
+            viewVolunteersButton.setOnClickListener {
+                // Handle button click here
+                val intent = Intent(this, admin_volunteers::class.java)
+                startActivity(intent)
+            }
+
+
 
 
     bottomNavigationView.setOnItemSelectedListener { item ->
