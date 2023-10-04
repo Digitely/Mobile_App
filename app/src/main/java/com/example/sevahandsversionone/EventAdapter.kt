@@ -6,9 +6,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import  com.example.sevahandsversionone.admin_volunteers
 
 
-class EventAdapter(private val events: List<Event>) : RecyclerView.Adapter<EventAdapter.ViewHolder>() {
+
+class EventAdapter(private val events: List<Event> , private val onDeleteClickListener: (Volunteer) -> Unit) : RecyclerView.Adapter<EventAdapter.ViewHolder>() {
 
     // ViewHolder class and methods
 
@@ -20,6 +22,11 @@ class EventAdapter(private val events: List<Event>) : RecyclerView.Adapter<Event
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val event = events[position]
         holder.bind(event)
+
+        holder.deleteButton.setOnClickListener {
+            // Call the lambda function to handle delete button click
+            onDeleteClickListener.invoke(event)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -32,8 +39,8 @@ class EventAdapter(private val events: List<Event>) : RecyclerView.Adapter<Event
         private val eventLocationTextView: TextView = itemView.findViewById(R.id.textViewEventLocation)
         private val eventDateTextView: TextView = itemView.findViewById(R.id.textViewEventDate)
         private val eventTimeTextView: TextView = itemView.findViewById(R.id.textViewEventTime)
-        private val editButton: Button = itemView.findViewById(R.id.buttonEditEvent)
-        private val deleteButton: Button = itemView.findViewById(R.id.buttonDeleteEvent)
+         val editButton: Button = itemView.findViewById(R.id.buttonEditEvent)
+         val deleteButton: Button = itemView.findViewById(R.id.buttonDeleteEvent)
 
 
         fun bind(event: Event) {

@@ -29,7 +29,7 @@ class admin_events : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewEvents)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val adapter = EventAdapter(eventList)
+        val adapter = EventAdapter(eventList, onDeleteClickListener)
         recyclerView.adapter = adapter
 
         // Retrieve data from Firebase Firestore
@@ -74,7 +74,18 @@ class admin_events : AppCompatActivity() {
                 // Handle failures
                 // You can add logging or error handling here
             }
+
+
+        val onDeleteClickListener: (Volunteer) -> Unit = { volunteer ->
+            // Handle delete operation here, for example:
+            deleteVolunteer(volunteer)
+        }
     }
+
+    private fun deleteVolunteer(volunteer: Volunteer) {
+        TODO("Not yet implemented")
+    }
+
 
     fun navigateToAddEventPage() {
         // Navigate to the "Add Event" page (you should define this activity)

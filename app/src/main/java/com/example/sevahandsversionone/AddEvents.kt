@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import com.google.firebase.firestore.FirebaseFirestore
@@ -48,8 +49,9 @@ class AddEvents : AppCompatActivity() {
             )
 
             // Add data to Firestore
+            Log.d("firebase",name)
             firestore.collection("Events")
-                .document()
+                .document(name)
                 .set(eventData)
                 .addOnSuccessListener {
                     // Data added successfully
