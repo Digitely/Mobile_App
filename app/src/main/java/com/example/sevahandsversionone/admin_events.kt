@@ -50,14 +50,16 @@ class admin_events : AppCompatActivity() {
                     val dateString = eventData["Date"] as String
 
 // Create SimpleDateFormat to format date and time
-                    val dateFormatter = SimpleDateFormat("MMMM dd, yyyy", Locale.ENGLISH)
-                    val timeFormatter = SimpleDateFormat("hh:mm:ss a", Locale.ENGLISH)
+                    val inputFormatter = SimpleDateFormat("MMMM d, yyyy 'at' h:mm:ss a", Locale.getDefault())
 
                     try {
                         // Parse the date string into a Date object
-                        val dateObject: Date = dateFormatter.parse(dateString)
+                        val dateObject: Date = inputFormatter.parse(dateString)
 
                         // Format the date and time components into separate variables
+                        val dateFormatter = SimpleDateFormat("MMMM dd, yyyy", Locale.ENGLISH)
+                        val timeFormatter = SimpleDateFormat("hh:mm:ss a", Locale.ENGLISH)
+
                         val dateFormatted = dateFormatter.format(dateObject)
                         val timeFormatted = timeFormatter.format(dateObject)
 

@@ -11,11 +11,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.GeoPoint
 import com.google.type.Date
+import com.google.firebase.firestore.FirebaseFirestore
+import java.text.SimpleDateFormat
+import java.util.Locale
+import com.google.protobuf.Timestamp
+import java.util.*
 
 class Events : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: ActivitiesAdapter
+    private lateinit var adapter: UserEventsAdapter
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,62 +29,70 @@ class Events : AppCompatActivity() {
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
 
-        // Control the bottom navigation bar
-        bottomNavigationView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.navigation_dashboard -> {
-                    startActivity(Intent(applicationContext, DashBoard::class.java))
-                    overridePendingTransition(R.transition.right, R.transition.left)
-                    finish()
-                    // Handle dashboard selection
-                    true
-                }
-                R.id.navigation_contact -> {
-                    // Start the Contact activity
-                    startActivity(Intent(applicationContext, Contact::class.java))
-                    overridePendingTransition(R.transition.right, R.transition.left)
-                    finish()
-                    true
-                }
-                R.id.navigation_home -> {
-                    // Start the Home activity
-                    startActivity(Intent(applicationContext, Home::class.java))
-                    overridePendingTransition(R.transition.right, R.transition.left)
-                    finish()
-                    true
-                }
-                else -> false
-            }
-        }
 
 
+
+        // Initialize RecyclerView and adapter
         recyclerView = findViewById(R.id.recycler_view)
-
-        // Create and set the adapter
-        adapter = ActivitiesAdapter(emptyList())
+        adapter = UserEventsAdapter(emptyList()) // Initialize with an empty list
         recyclerView.adapter = adapter
 
-        // Set the layout manager (e.g., LinearLayoutManager)
+        // Set the layout manager (LinearLayoutManager in this case)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         // Retrieve activity items and set them on the adapter
         val activityItems = retrieveActivityItems() // Replace with your data retrieval logic
-        adapter.setActivityItems(activityItems)
+        adapter.setEventsList(activityItems)
     }
 
-    private fun retrieveActivityItems(): List<ActivityItem> {
-        // Replace this with your data retrieval logic.
-        // Fetch the activity items from a database, API, or any other data source.
-        // Create a list of ActivityItem objects based on the retrieved data.
-        // Return the list of activity items.
+    private fun retrieveActivityItems(): List<Event> {
+        val db = FirebaseFirestore.getInstance()
+        val eventsCollection = db.collection("Events")
+        val eventList = mutableListOf<Event>()
 
-        // For demonstration purposes, manually creating dummy data here:
-        val activityItems = listOf(
-            ActivityItem("Event 1", "Description 1", GeoPoint(0.0, 0.0), java.util.Date()),
-            ActivityItem("Event 2", "Description 2", GeoPoint(0.0, 0.0), java.util.Date()),
-            ActivityItem("Event 3", "Description 3", GeoPoint(0.0, 0.0), java.util.Date())
-        )
+//this is a test
+        eventsCollection.get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val eventData = document.data
+                    val name = eventData["Name"] as String
+                    val description = eventData["Description"] as String
+                    val location = eventData["Location"] as String
 
-        return activityItems
+                    val dateString = eventData["Date"] as String
+
+// Create SimpleDateFormat to format date and time
+                    val inputFormatter = SimpleDateFormat("MMMM d, yyyy 'at' h:mm:ss a", Locale.getDefault())
+
+                    try {
+                        // Parse the date string into a Date object
+                        val dateObject: java.util.Date = inputFormatter.parse(dateString)
+
+                        // Format the date and time components into separate variables
+                        val dateFormatter = SimpleDateFormat("MMMM dd, yyyy", Locale.ENGLISH)
+                        val timeFormatter = SimpleDateFormat("hh:mm:ss a", Locale.ENGLISH)
+
+                        val dateFormatted = dateFormatter.format(dateObject)
+                        val timeFormatted = timeFormatter.format(dateObject)
+
+                        // Create an Event object with formatted date and time
+                        val event = Event(name, description, location, dateFormatted, timeFormatted)
+                        eventList.add(event)
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+
+                }
+
+                // Notify the adapter that the data has changed
+                adapter.notifyDataSetChanged()
+            }
+            .addOnFailureListener { exception ->
+                // Handle failures
+                // You can add logging or error handling here
+            }
+
+        return eventList
     }
+
 }
