@@ -25,7 +25,7 @@ class EventAdapter(private val events: List<Event> , private val onDeleteClickLi
 
         holder.deleteButton.setOnClickListener {
             // Call the lambda function to handle delete button click
-            onDeleteClickListener.invoke(event)
+           // onDeleteClickListener.invoke(event)
         }
     }
 

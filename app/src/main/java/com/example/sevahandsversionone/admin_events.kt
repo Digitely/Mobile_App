@@ -25,7 +25,10 @@ class admin_events : AppCompatActivity() {
             // Navigate to the "Add Event" page (you should define this activity)
             navigateToAddEventPage()
         }
-
+        val onDeleteClickListener: (Volunteer) -> Unit = { volunteer ->
+            // Handle delete operation here, for example:
+            deleteVolunteer(volunteer)
+        }
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewEvents)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -76,10 +79,7 @@ class admin_events : AppCompatActivity() {
             }
 
 
-        val onDeleteClickListener: (Volunteer) -> Unit = { volunteer ->
-            // Handle delete operation here, for example:
-            deleteVolunteer(volunteer)
-        }
+
     }
 
     private fun deleteVolunteer(volunteer: Volunteer) {
