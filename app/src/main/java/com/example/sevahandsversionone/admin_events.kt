@@ -2,7 +2,10 @@ package com.example.sevahandsversionone
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +18,7 @@ import java.util.Locale
 class admin_events : AppCompatActivity() {
 
     private val eventList = ArrayList<Event>() // Initialize an empty list of events
+    private val db = FirebaseFirestore.getInstance() // Initialize Firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,16 +29,26 @@ class admin_events : AppCompatActivity() {
             // Navigate to the "Add Event" page (you should define this activity)
             navigateToAddEventPage()
         }
-        val onDeleteClickListener: (Volunteer) -> Unit = { volunteer ->
-            // Handle delete operation here, for example:
-            deleteVolunteer(volunteer)
-        }
+
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewEvents)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val adapter = EventAdapter(eventList, onDeleteClickListener)
-        recyclerView.adapter = adapter
+        val adapter = EventAdapter(
+            eventList,
+            onEditClickListener = { event ->
+                // Handle edit click if needed
+                Log.d("testing","button has been pushed")
+                val editIntent = Intent(this, EditEventActivity::class.java)
+                editIntent.putExtra("event", event) // event is the selected Event object
+                startActivity(editIntent)
+            },
+            onDeleteClickListener = { event ->
+                // Delete the record from Firestore based on event name
+                showDeleteConfirmationDialog(event )
+            }
+        )
 
+        recyclerView.adapter = adapter
         // Retrieve data from Firebase Firestore
         val db = FirebaseFirestore.getInstance()
         val eventsCollection = db.collection("Events")
@@ -84,11 +98,45 @@ class admin_events : AppCompatActivity() {
 
     }
 
-    private fun deleteVolunteer(volunteer: Volunteer) {
-        TODO("Not yet implemented")
+
+    fun showDeleteConfirmationDialog(event: Event) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Confirm Deletion")
+        builder.setMessage("Are you sure you want to delete this event?")
+
+        builder.setPositiveButton("Yes") { dialog, _ ->
+            // Delete the record from Firestore based on event name
+            db.collection("Events")
+                .document(event.name) // Assuming event name is the document ID
+                .delete()
+                .addOnSuccessListener {
+                    // Handle successful deletion
+                    Toast.makeText(this, "Event deleted successfully", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { e ->
+                    // Handle deletion failure
+                    Toast.makeText(this, "Failed to delete event: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+            dialog.dismiss()
+        }
+
+        builder.setNegativeButton("No") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        val alertDialog: AlertDialog = builder.create()
+        alertDialog.show()
     }
 
 
+
+    private val onEditClickListener: (Event) -> Unit = { event ->
+        // Handle edit operation here
+        Log.d("testing","button has been pushed")
+        val editIntent = Intent(this, EditEventActivity::class.java)
+        editIntent.putExtra("event", event) // event is the selected Event object
+        startActivity(editIntent)
+    }
     fun navigateToAddEventPage() {
         // Navigate to the "Add Event" page (you should define this activity)
         val intent = Intent(this, AddEvents::class.java)

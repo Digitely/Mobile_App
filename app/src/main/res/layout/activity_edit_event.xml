@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EditEventActivity"
+    android:background="@drawable/eveimg">
+
+
+    <TextView
+        android:id="@+id/detailstextView"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="30dp"
+        android:text="edit  details for the  Seva Hands event:"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/text_box2"
+        android:hint=" Name"
+        android:minHeight="48dp"
+        android:textColorHint="@color/grey" />
+
+
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/text_box2"
+        android:hint=" Description"
+        android:minHeight="48dp"
+        android:textColorHint="@color/grey" />
+
+    <EditText
+        android:id="@+id/editTextLocation"
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/text_box2"
+        android:hint=" Location (e.g., [90° N, 90° E])"
+        android:minHeight="48dp"
+        android:textColorHint="@color/grey" />
+
+
+    <Button
+        android:id="@+id/buttonSelectDate"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/otherbuttons"
+        android:drawableLeft="@drawable/baseline_calendar_month_24"
+        android:text="@string/select_date" />
+
+
+    <Button
+        android:id="@+id/buttonAddEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="325dp"
+        android:background="@drawable/button"
+        android:text="edit Event" />
+</LinearLayout>

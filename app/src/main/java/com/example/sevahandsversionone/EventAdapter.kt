@@ -10,7 +10,8 @@ import  com.example.sevahandsversionone.admin_volunteers
 
 
 
-class EventAdapter(private val events: List<Event> , private val onDeleteClickListener: (Volunteer) -> Unit) : RecyclerView.Adapter<EventAdapter.ViewHolder>() {
+class EventAdapter(private val events: List<Event> ,    private val onEditClickListener: (Event) -> Unit,
+                   private val onDeleteClickListener: (Event) -> Unit,) : RecyclerView.Adapter<EventAdapter.ViewHolder>() {
 
     // ViewHolder class and methods
 
@@ -23,11 +24,18 @@ class EventAdapter(private val events: List<Event> , private val onDeleteClickLi
         val event = events[position]
         holder.bind(event)
 
+        holder.editButton.setOnClickListener {
+            // Call the lambda function to handle edit button click
+            onEditClickListener.invoke(event)
+        }
+
         holder.deleteButton.setOnClickListener {
             // Call the lambda function to handle delete button click
-           // onDeleteClickListener.invoke(event)
+            onDeleteClickListener.invoke(event)
         }
     }
+
+
 
     override fun getItemCount(): Int {
         return events.size
@@ -50,6 +58,8 @@ class EventAdapter(private val events: List<Event> , private val onDeleteClickLi
             eventDateTextView.text = "Event Date: ${event.date}"
             eventTimeTextView.text = "Event Time: ${event.Time}"
             // Set click listeners for edit and delete buttons
+
+
         }
     }
 }
