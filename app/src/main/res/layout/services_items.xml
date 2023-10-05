@@ -27,10 +27,10 @@
 
     <TextView
         android:id="@+id/TVDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="348dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_sed_vehicula_dui_sed_vestibulum"
-        android:textSize="16sp"
-        android:layout_marginBottom="32dp" />
+        android:textSize="18dp" />
 
 </LinearLayout>
