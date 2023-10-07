@@ -21,7 +21,7 @@
         android:background="@color/redish"
         android:text="Event Name:"
         android:textColor="@color/black"
-        android:textSize="18sp"
+
         android:textStyle="bold" />
 
     <TextView
@@ -32,7 +32,7 @@
         android:layout_marginBottom="8dp"
         android:text="Event Description"
         android:textColor="@color/black"
-        android:textSize="18sp" />
+         />
 
     <TextView
         android:id="@+id/textViewEventLocation"
@@ -42,7 +42,7 @@
         android:layout_marginBottom="8dp"
         android:text="Event Location:"
         android:textColor="@color/black"
-        android:textSize="18sp" />
+         />
 
     <TextView
         android:id="@+id/textViewEventDate"
@@ -52,7 +52,7 @@
         android:layout_marginBottom="8dp"
         android:text="Event Date:"
         android:textColor="@color/black"
-        android:textSize="18sp" />
+         />
 
     <TextView
         android:id="@+id/textViewEventTime"
@@ -62,7 +62,7 @@
         android:text="Event Time:"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="18sp" />
+         />
 
     <!-- Edit and Delete Buttons -->
     <Button
@@ -70,6 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Edit"
+        android:textSize="14dp"
         android:background="@drawable/button"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="220dp"/>
@@ -80,6 +81,7 @@
         android:background="@drawable/button"
         android:layout_height="wrap_content"
         android:layout_marginLeft="125dp"
+        android:textSize="14dp"
         android:layout_marginTop="-48dp"
         android:text="Delete" />
 

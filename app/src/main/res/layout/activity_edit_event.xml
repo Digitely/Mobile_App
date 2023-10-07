@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".EditEventActivity"
+    android:padding="16dp"
     android:background="@drawable/eveimg">
 
 
@@ -16,16 +17,17 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="17dp"
         android:layout_marginTop="30dp"
-        android:text="edit  details for the  Seva Hands event:"
+        android:text="Edit details for the next Seva Hands event:"
         android:textColor="@color/black"
         android:textSize="17dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="326dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
+
         android:layout_marginTop="14dp"
         android:background="@drawable/text_box2"
         android:hint=" Name"
@@ -53,18 +55,18 @@
         android:background="@drawable/text_box2"
         android:hint=" Location (e.g., [90° N, 90° E])"
         android:minHeight="48dp"
-        android:textColorHint="@color/grey" />
-
+        android:textColorHint="@color/grey"/>
 
     <Button
         android:id="@+id/buttonSelectDate"
-        android:layout_width="174dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="98dp"
+        android:layout_width="233dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="60dp"
         android:layout_marginTop="14dp"
         android:background="@drawable/otherbuttons"
         android:drawableLeft="@drawable/baseline_calendar_month_24"
-        android:text="@string/select_date" />
+        android:text="@string/select_date"
+        android:textSize="8dp" />
 
 
     <Button
@@ -75,5 +77,5 @@
         android:layout_marginLeft="1dp"
         android:layout_marginTop="325dp"
         android:background="@drawable/button"
-        android:text="edit Event" />
+        android:text="Edit Event" />
 </LinearLayout>

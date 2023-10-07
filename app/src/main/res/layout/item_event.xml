@@ -12,34 +12,33 @@
         android:background="@color/redish">
 
         <!-- Orange block on the left -->
-        <View
-            android:layout_width="8dp"
-            android:layout_height="match_parent"
-            android:background="@color/redpink"/>
+
 
         <!-- Event name -->
         <TextView
             android:id="@+id/text_event_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="Event:"
             android:textStyle="bold"
-            android:paddingStart="8dp" />
+            android:paddingStart="0dp" />
 
         <!-- Orange block on the right -->
         <View
             android:layout_width="8dp"
             android:layout_height="match_parent"
-            android:background="@android:color/holo_orange_dark" />
+        />
 
     </LinearLayout>
 
     <!-- Event date -->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="382dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
 
         <!-- Date icon
         <ImageView
@@ -50,22 +49,33 @@
         <!-- Event date -->
         <TextView
             android:id="@+id/text_event_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:textSize="14sp" />
+            android:layout_width="218dp"
+            android:layout_height="match_parent"
+            android:text="Date:"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/text_event_time"
-            android:layout_width="wrap_content"
+            android:layout_width="154dp"
+            android:text="Time:"
+            android:textColor="@color/black"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginLeft="0dp"
+            android:textStyle="bold"
             android:textSize="14sp" />
+
+
+
     </LinearLayout>
 
     <!-- Event description -->
     <TextView
         android:id="@+id/text_event_description"
         android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Description:"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp" />
 
@@ -74,6 +84,9 @@
         android:id="@+id/text_event_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Location:"
         android:layout_marginTop="8dp" />
 
     <!-- Get Directions button -->
@@ -82,8 +95,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Get Directions"
+
         android:layout_marginTop="8dp"
-        android:layout_marginLeft="200dp"/>
+        android:layout_marginLeft="150dp"/>
 
     <!-- Add any other views or styling as desired -->
 
