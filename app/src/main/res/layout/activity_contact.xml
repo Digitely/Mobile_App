@@ -1,133 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/background_contact"
     tools:context=".Contact">
 
+    <EditText
+        android:id="@+id/messageBox"
+        android:layout_width="284dp"
+        android:layout_height="65dp"
+
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="230dp"
+
+        android:background="@color/transparent"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/sendBtn"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="315dp"
+        app:srcCompat="@drawable/arrow" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="248dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="109dp"
+            android:layout_height="64dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="137dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="137dp"
+            app:srcCompat="@drawable/logotrans" />
+
+        <ImageButton
+            android:id="@+id/TickTokBtn"
+            android:layout_width="49dp"
+            android:layout_height="36dp"
+            android:layout_below="@+id/textView2"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="155dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="80dp"
+            android:layout_toEndOf="@+id/InstagramBtn"
+            android:background="@android:color/transparent"
+            android:contentDescription="TickTokBtn"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tiktok"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/InstagramBtn"
+            android:layout_width="49dp"
+            android:layout_height="36dp"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="68dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="17dp"
+
+            android:layout_marginRight="80dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="InstagramBtn"
+            android:scaleType="fitCenter"
+            android:src="@drawable/instagram"
+            tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/FaceBookBtn"
+            android:layout_width="49dp"
+            android:layout_height="36dp"
+            android:layout_below="@+id/textView2"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="230dp"
+
+            android:layout_marginTop="17dp"
+
+            android:layout_marginRight="80dp"
+            android:layout_toEndOf="@+id/TickTokBtn"
+            android:background="@android:color/transparent"
+            android:contentDescription="Facebook"
+            android:scaleType="fitCenter"
+            android:src="@drawable/facebook"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <ImageButton
+            android:id="@+id/linkedin"
+            android:layout_width="49dp"
+            android:layout_height="36dp"
+            android:layout_below="@+id/textView2"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="80dp"
+            android:layout_toEndOf="@+id/FaceBookBtn"
+            android:background="@android:color/transparent"
+            android:contentDescription="linkedin"
+            android:scaleType="fitCenter"
+            android:src="@drawable/linkedin"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="236dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="83dp"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="83dp"
+            android:gravity="center"
+            android:text="@string/contactdetails"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="355dp"
         android:layout_height="61dp"
+
+        android:layout_marginBottom="40dp"
+        android:layout_gravity="center"
         android:background="@drawable/navdesign"
         app:itemIconTint="@color/white"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.934"
         app:menu="@menu/bottom_nav_menu" />
 
-    <EditText
-        android:id="@+id/messageBox"
-        android:layout_width="297dp"
-        android:layout_height="71dp"
-        android:background="@color/transparent"
-        android:ems="10"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.432"
-        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="225dp"
-        android:layout_height="89dp"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/messageBox"
-        app:layout_constraintVertical_bias="0.186"
-        app:srcCompat="@drawable/logotrans" />
-
-    <ImageButton
-        android:id="@+id/TickTokBtn"
-        android:layout_width="42dp"
-        android:layout_height="35dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="TickTokBtn"
-        android:scaleType="fitCenter"
-        android:src="@drawable/tiktok"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
-        app:layout_constraintStart_toEndOf="@+id/InstagramBtn"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.727"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/linkedin"
-        android:layout_width="40dp"
-        android:layout_height="35dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="linkedin"
-        android:scaleType="fitCenter"
-        android:src="@drawable/linkedin"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.226"
-        app:layout_constraintStart_toEndOf="@+id/TickTokBtn"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.757"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/InstagramBtn"
-        android:layout_width="42dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="InstagramBtn"
-        android:scaleType="fitCenter"
-        android:src="@drawable/instagram"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.109"
-        app:layout_constraintStart_toEndOf="@+id/FaceBookBtn"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/FaceBookBtn"
-        android:layout_width="39dp"
-        android:layout_height="37dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="Facebook"
-        android:scaleType="fitCenter"
-        android:src="@drawable/facebook"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.692"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="284dp"
-        android:layout_height="116dp"
-        android:gravity="center"
-        android:text="@string/contactdetails"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.0" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
