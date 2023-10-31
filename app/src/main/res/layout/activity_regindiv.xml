@@ -32,35 +32,56 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.487"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="SpeakableTextPresentCheck" />
+
 
   <TextView
       android:id="@+id/registerTextView"
-      android:layout_width="191dp"
+      android:layout_width="229dp"
       android:layout_height="49dp"
       android:text="@string/register_as"
       android:textColor="@color/lightblue"
       android:textSize="35sp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.181"
+      app:layout_constraintHorizontal_bias="0.225"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.052" />
+      app:layout_constraintVertical_bias="0.051" />
 
   <TextView
-      android:id="@+id/textView2"
-      android:layout_width="204dp"
-      android:layout_height="28dp"
-      android:text="Individual Donor/Company"
+      android:id="@+id/indivText"
+      android:layout_width="135dp"
+      android:layout_height="27dp"
+      android:layout_marginStart="40dp"
+
+      android:text="Individual Donor"
+      android:textColor="@color/lightblue"
+      android:textSize="17dp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.119"
+      tools:ignore="TouchTargetSizeCheck" />
+
+  <TextView
+      android:id="@+id/companyTextView"
+      android:layout_width="87dp"
+      android:layout_height="27dp"
+      android:layout_marginEnd="144dp"
+
+      android:text="/Company"
       android:textColor="@color/lightblue"
       android:textSize="17dp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.299"
-      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toEndOf="@+id/indivText"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.12" />
+      app:layout_constraintVertical_bias="0.119"
+      tools:ignore="TouchTargetSizeCheck" />
 
   <TextView
       android:id="@+id/textView3"
@@ -87,7 +108,8 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.758" />
+      app:layout_constraintVertical_bias="0.758"
+      tools:ignore="SpeakableTextPresentCheck" />
 
   <TextView
       android:id="@+id/passwordTextView"
@@ -148,7 +170,8 @@
       app:layout_constraintHorizontal_bias="0.487"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.366" />
+      app:layout_constraintVertical_bias="0.366"
+      tools:ignore="SpeakableTextPresentCheck" />
 
   <EditText
       android:id="@+id/fullNameEditText"
@@ -165,7 +188,8 @@
       app:layout_constraintHorizontal_bias="0.487"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.234" />
+      app:layout_constraintVertical_bias="0.234"
+      tools:ignore="SpeakableTextPresentCheck" />
 
   <TextView
       android:id="@+id/contactNumberTextView"
@@ -194,7 +218,8 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.626" />
+      app:layout_constraintVertical_bias="0.626"
+      tools:ignore="SpeakableTextPresentCheck" />
 
   <TextView
       android:id="@+id/emailTextView"
@@ -221,6 +246,7 @@
       app:layout_constraintHorizontal_bias="0.887"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.842" />
+      app:layout_constraintVertical_bias="0.842"
+      tools:ignore="TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,17 +8,17 @@
 
   <TextView
       android:id="@+id/textView"
-      android:layout_width="207dp"
-      android:layout_height="51dp"
+      android:layout_width="231dp"
+      android:layout_height="48dp"
       android:text="Register as"
       android:textColor="@color/lightblue"
       android:textSize="35dp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.156"
+      app:layout_constraintHorizontal_bias="0.194"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.023" />
+      app:layout_constraintVertical_bias="0.029" />
 
   <TextView
       android:id="@+id/textView3"
@@ -135,7 +135,8 @@
       app:layout_constraintHorizontal_bias="0.917"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.93" />
+      app:layout_constraintVertical_bias="0.93"
+      tools:ignore="TouchTargetSizeCheck" />
 
   <EditText
       android:id="@+id/editTextTextPassword6"
@@ -225,18 +226,37 @@
       tools:ignore="SpeakableTextPresentCheck" />
 
   <TextView
-      android:id="@+id/textView2"
-      android:layout_width="204dp"
-      android:layout_height="28dp"
-      android:text="Individual Donor/Company"
+      android:id="@+id/indivText"
+      android:layout_width="135dp"
+      android:layout_height="27dp"
+      android:layout_marginStart="32dp"
+
+      android:text="Individual Donor/"
       android:textColor="@color/lightblue"
       android:textSize="17dp"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.299"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.095" />
+      app:layout_constraintVertical_bias="0.096"
+      tools:ignore="TouchTargetSizeCheck" />
+
+  <TextView
+      android:id="@+id/companyTextView"
+      android:layout_width="87dp"
+      android:layout_height="23dp"
+      android:layout_marginEnd="124dp"
+     
+      android:text="Company"
+      android:textColor="@color/lightblue"
+      android:textSize="17dp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.06"
+      app:layout_constraintStart_toEndOf="@+id/indivText"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.096"
+      tools:ignore="TouchTargetSizeCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
