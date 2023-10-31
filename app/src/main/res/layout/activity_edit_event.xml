@@ -66,7 +66,8 @@
         android:background="@drawable/otherbuttons"
         android:drawableLeft="@drawable/baseline_calendar_month_24"
         android:text="@string/select_date"
-        android:textSize="8dp" />
+        android:textSize="8dp"
+        tools:ignore="TextSizeCheck" />
 
 
     <Button
