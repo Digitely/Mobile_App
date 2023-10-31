@@ -68,12 +68,7 @@ class AdminHome : AppCompatActivity() {
                 return@setOnItemSelectedListener true
             }
 
-            R.id.navigation_users -> {
-                startActivity(Intent(applicationContext, admin_users::class.java))
-                overridePendingTransition(R.transition.right, R.transition.left)
-                finish()
-                return@setOnItemSelectedListener true
-            }
+
         }
         return@setOnItemSelectedListener false
     }
@@ -93,12 +88,7 @@ private val navListener = BottomNavigationView.OnNavigationItemSelectedListener 
                     startActivity(intent)
                     return@OnNavigationItemSelectedListener true
                 }
-                R.id.navigation_users -> {
-                    // Start ProfileActivity
-                    val intent = Intent(this, admin_users::class.java)
-                    startActivity(intent)
-                    return@OnNavigationItemSelectedListener true
-                }
+
                 R.id.navigation_events -> {
                     // Start ProfileActivity
                     val intent = Intent(this, admin_events::class.java)

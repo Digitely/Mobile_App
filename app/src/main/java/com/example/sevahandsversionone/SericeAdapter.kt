@@ -25,13 +25,15 @@ class ServiceAdapter(private val serviceItems: List<ServiceItem>) : RecyclerView
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // Initialize UI components from recycler_view_item.xml
-        private val titleTextView: TextView = itemView.findViewById(R.id.TVHeading)
+      //  private val titleTextView: TextView = itemView.findViewById(R.id.TVHeading)
+        private val subTextView: TextView = itemView.findViewById(R.id.TVsub)
         private val descriptionTextView: TextView = itemView.findViewById(R.id.TVDescription)
         private val imageView: ImageView = itemView.findViewById(R.id.ServicesImg)
 
         fun bind(serviceItem: ServiceItem) {
             // Bind data to UI components
-            titleTextView.text = serviceItem.title
+          //  titleTextView.text = serviceItem.title
+            subTextView.text = serviceItem.subTitle
             descriptionTextView.text = serviceItem.description
             imageView.setImageResource(serviceItem.imageResId)
         }

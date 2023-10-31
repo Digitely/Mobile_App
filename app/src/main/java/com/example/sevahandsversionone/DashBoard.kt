@@ -2,8 +2,10 @@ package com.example.sevahandsversionone
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +20,7 @@ class DashBoard : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
         val galbtnImageView = findViewById<ImageView>(R.id.galbtnImageView)
         val eventsbtnImageView = findViewById<ImageView>(R.id.eventsbtnImageView)
-        val DonateimageView = findViewById<ImageView>(R.id.eventsbtnImageView)
+        val donatebtnimageView = findViewById<ImageView>(R.id.DonateimageView)
         val LocationbtnimageView = findViewById<ImageView>(R.id.LocationbtnimageView)
 
         galbtnImageView.setOnClickListener {
@@ -27,17 +29,20 @@ class DashBoard : AppCompatActivity() {
             startActivity(intent)
         }
 
+        donatebtnimageView.setOnClickListener {
+            // Handle the button click here
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.paypal.com/donate/?hosted_button_id=9A7RM3N4NQV3G"))
+            startActivity(browserIntent)
+        }
+
+
         eventsbtnImageView.setOnClickListener {
             // Navigate to the EventsActivity when the eventsbtnImageView is clicked
             val intent = Intent(this@DashBoard, Events::class.java)
             startActivity(intent)
         }
 
-        DonateimageView.setOnClickListener {
-            // Navigate to the EventsActivity when the eventsbtnImageView is clicked
-            val intent = Intent(this@DashBoard, Events::class.java)
-            startActivity(intent)
-        }
+
 
         LocationbtnimageView.setOnClickListener {
             // Navigate to the EventsActivity when the eventsbtnImageView is clicked

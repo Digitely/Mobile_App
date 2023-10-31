@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,78 +10,85 @@
     tools:context=".admin_events">
 
 
-    <!-- RecyclerView to display events -->
-    <TextView
-        android:id="@+id/textViewEventName"
-        android:layout_width="362dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:background="@color/redish"
-        android:text="Event Name:"
-        android:textColor="@color/black"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textViewEventDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"
-        android:text="Event Description"
-        android:textColor="@color/black"
-         />
+            <!-- RecyclerView to display events -->
+            <TextView
+                android:id="@+id/textViewEventName"
+                android:layout_width="362dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@color/redish"
+                android:text="Event Name:"
+                android:textColor="@color/black"
 
-    <TextView
-        android:id="@+id/textViewEventLocation"
-        android:layout_width="wrap_content"
-        android:textStyle="bold"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Event Location:"
-        android:textColor="@color/black"
-         />
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textViewEventDate"
-        android:layout_width="wrap_content"
-        android:textStyle="bold"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Event Date:"
-        android:textColor="@color/black"
-         />
+            <TextView
+                android:id="@+id/textViewEventDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Event Description"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textViewEventTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Event Time:"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-         />
+            <TextView
+                android:id="@+id/textViewEventLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Event Location:"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
-    <!-- Edit and Delete Buttons -->
-    <Button
-        android:id="@+id/buttonEditEvent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit"
-        android:textSize="14dp"
-        android:background="@drawable/button"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="220dp"/>
+            <TextView
+                android:id="@+id/textViewEventDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Event Date:"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/buttonDeleteEvent"
-        android:layout_width="wrap_content"
-        android:background="@drawable/button"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="125dp"
-        android:textSize="14dp"
-        android:layout_marginTop="-48dp"
-        android:text="Delete" />
+            <TextView
+                android:id="@+id/textViewEventTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Event Time:"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
+            <!-- Edit and Delete Buttons -->
+            <Button
+                android:id="@+id/buttonEditEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button"
+                android:text="Edit"
+                android:textSize="14dp"
+                tools:ignore="TextSizeCheck" />
+
+            <Button
+                android:id="@+id/buttonDeleteEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="125dp"
+                android:layout_marginTop="-48dp"
+                android:background="@drawable/button"
+                android:text="Delete"
+                android:textSize="14dp"
+                tools:ignore="TextSizeCheck" />
+
+
+        </LinearLayout>
 
 </LinearLayout>

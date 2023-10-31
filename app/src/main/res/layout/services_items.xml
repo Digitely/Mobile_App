@@ -8,32 +8,37 @@
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
+
     <TextView
-        android:id="@+id/TVHeading"
-        android:layout_width="wrap_content"
+        android:id="@+id/TVsub"
+        android:layout_width="358dp"
         android:layout_height="wrap_content"
-        android:text="@string/welcome_to_our_services"
-        android:textColor="@color/black"
-        android:textSize="24sp"
+        android:text="TextView"
+        android:textSize="18dp"
+        android:gravity="center"
         android:textStyle="bold"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"/>
+        android:textColor="@color/redish"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="5dp"/>
 
     <ImageView
         android:id="@+id/ServicesImg"
         android:layout_width="358dp"
         android:layout_height="200dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="6dp"
         android:src="@drawable/facebook" />
 
     <TextView
         android:id="@+id/TVDescription"
-        android:layout_width="348dp"
-        android:layout_height="385dp"
+        android:layout_width="358dp"
+        android:layout_height="wrap_content"
+        android:text="Your service description goes here."
         android:textColor="@color/black"
-        android:layout_marginBottom="32dp"
-        android:text="@string/lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_sed_vehicula_dui_sed_vestibulum"
-        android:textAlignment="gravity"
-        android:textSize="18dp" />
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:layoutDirection="locale"
+    />
 
 </LinearLayout>

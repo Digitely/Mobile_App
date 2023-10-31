@@ -21,7 +21,9 @@ class Services : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_home -> {
-                    // Handle dashboard selection
+                    startActivity(Intent(applicationContext, Home::class.java))
+                    overridePendingTransition(R.transition.right, R.transition.left)
+                    finish()
                     true
                 }
                 R.id.navigation_contact -> {
