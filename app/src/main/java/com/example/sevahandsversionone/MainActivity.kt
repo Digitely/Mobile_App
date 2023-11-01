@@ -26,10 +26,24 @@ class MainActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
 
         if (currentUser != null) {
-            // User is already signed in, redirect to the home page
-            val intent = Intent(this@MainActivity, Home::class.java)
-            startActivity(intent)
+
+
+            val userEmailAddress =currentUser.email
+
+                if (userEmailAddress == "admin@sevahands.com") {
+                    // If the user's email is admin@sevahands.com, redirect to the admin page
+                    val adminIntent = Intent(this@MainActivity, AdminHome::class.java)
+                    startActivity(adminIntent)
+                } else {
+                    // If the user's email is not admin@sevahands.com, redirect to the home page
+                    val homeIntent = Intent(this@MainActivity, Home::class.java)
+                    startActivity(homeIntent)
+                }
+
+// Finish the current activity to prevent the user from navigating back to the login screen
             finish()
+
+
         } else {
             // User is not signed in, proceed with the timer task
             val showSplash = object : TimerTask() {

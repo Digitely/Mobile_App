@@ -75,6 +75,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnExplore"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/imageView11" />
 
     <TextView

@@ -1,5 +1,7 @@
 package com.example.sevahandsversionone
 
+import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -25,6 +28,7 @@ class Login : AppCompatActivity() {
   private lateinit var mAuth: FirebaseAuth
   private lateinit var mGoogleApiClient: GoogleApiClient
 
+  @SuppressLint("CutPasteId")
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_login)
@@ -45,6 +49,35 @@ class Login : AppCompatActivity() {
       startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
+    val forgotPass: TextView = findViewById(R.id.forgotPass)
+
+    // Set an OnClickListener on the EditText
+    forgotPass.setOnClickListener {
+      // Create a dialog to prompt the user for their email
+      val dialogBuilder = AlertDialog.Builder(this)
+      val editText = EditText(this)
+      dialogBuilder.setTitle("Enter your email")
+        .setView(editText)
+        .setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
+          // Handle the user input (email) here
+          val email = editText.text.toString()
+          // Now you can use 'email' to perform the necessary actions
+          mAuth.sendPasswordResetEmail(email)
+            .addOnCompleteListener { task ->
+              if (task.isSuccessful) {
+                // Password reset email sent successfully
+                // Handle success, show a toast message, etc.
+              } else {
+                // Password reset email failed
+                // Handle failure, show a toast message, etc.
+              }
+            }
+        })
+        .setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which ->
+          dialog.cancel()
+        })
+        .show()
+    }
 
     // Set click listener for "Create Account" text
     val textViewClickable = findViewById<TextView>(R.id.reglink)
