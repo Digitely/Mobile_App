@@ -35,10 +35,10 @@ class Home : AppCompatActivity() {
             startActivity(browserIntent)
         }
 
-        val textViewLogout = findViewById<TextView>(R.id.textViewLogout);
+        val textViewLogout = findViewById<TextView>(R.id.textViewLogout)
         textViewLogout.setOnClickListener {
             // Handle the button click here
-            FirebaseAuth.getInstance().signOut();
+            FirebaseAuth.getInstance().signOut()
             val intent = Intent(this, Login::class.java)
             startActivity(intent) // Start the login page
         }

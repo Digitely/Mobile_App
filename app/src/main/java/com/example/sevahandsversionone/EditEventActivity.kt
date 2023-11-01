@@ -18,7 +18,7 @@ class EditEventActivity : AppCompatActivity() {
     private lateinit var editTextName: EditText
     private lateinit var buttonAddEvent: Button
     private lateinit var buttonSelectDate: Button
-    public lateinit  var oldName :String
+    lateinit  var oldName :String
     private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +44,7 @@ class EditEventActivity : AppCompatActivity() {
             editTextName.setText(it.name)
             editTextDescription.setText(it.description)
             editTextLocation.setText(it.location)
-            buttonSelectDate.setText(it.date+" at "+it.Time)
+            buttonSelectDate.text = it.date+" at "+it.Time
             oldName = it.name
         }
 

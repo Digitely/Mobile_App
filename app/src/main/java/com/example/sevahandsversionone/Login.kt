@@ -160,7 +160,7 @@ class Login : AppCompatActivity() {
       val result = data?.let { Auth.GoogleSignInApi.getSignInResultFromIntent(it) }
       if (result != null) {
         if (result.isSuccess) {
-          val account = result?.signInAccount
+          val account = result.signInAccount
           if (account != null) {
             firebaseAuthWithGoogle(account)
           }

@@ -43,7 +43,7 @@ class GalleryAdd : AppCompatActivity() {
             GlobalScope.launch(Dispatchers.IO) {
                 listResult.items.forEach { item ->
                     item.downloadUrl.addOnSuccessListener { uri ->
-                        val uploadedFile = UploadedFile(item.name ?: "Unknown", uri.toString())
+                        val uploadedFile = UploadedFile(item.name, uri.toString())
                         uploadedFiles.add(uploadedFile)
                         runOnUiThread {
                             fileAdapter.notifyDataSetChanged()
