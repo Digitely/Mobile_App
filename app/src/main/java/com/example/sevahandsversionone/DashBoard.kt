@@ -25,7 +25,7 @@ class DashBoard : AppCompatActivity() {
 
         galbtnImageView.setOnClickListener {
             // Navigate to the GalleryActivity when the galbtnImageView is clicked
-            val intent = Intent(this@DashBoard, Gallery::class.java)
+            val intent = Intent(this@DashBoard, Gallary::class.java)
             startActivity(intent)
         }
 

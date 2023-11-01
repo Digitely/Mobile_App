@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
@@ -34,7 +35,17 @@ class Regindiv : AppCompatActivity() {
     regbtn.setOnClickListener {
       registerUser()
     }
+
+    val companyTextView = findViewById<TextView>(R.id.companyTextView)
+
+    companyTextView.setOnClickListener {
+      val intent = Intent(this, Regorg::class.java)
+      startActivity(intent)
+    }
+
   }
+
+
 
   private fun registerUser() {
     val email = userEmail.text.toString().trim()
