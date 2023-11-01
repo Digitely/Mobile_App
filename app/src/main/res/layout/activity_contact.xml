@@ -1,155 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/background_contact"
-    tools:context=".Contact">
+>
 
-    <EditText
-        android:id="@+id/messageBox"
-        android:layout_width="284dp"
-        android:layout_height="65dp"
-
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="230dp"
-
-        android:background="@color/transparent"
-        android:ems="10"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageView
-        android:id="@+id/sendBtn"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_marginLeft="315dp"
-        app:srcCompat="@drawable/arrow" />
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="248dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp">
+        android:layout_height="match_parent"
+        android:background="@drawable/background_contact"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.017"
+        tools:context=".Contact">
 
+        <EditText
+            android:id="@+id/messageBox"
+            android:layout_width="284dp"
+            android:layout_height="65dp"
+
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="230dp"
+
+            android:background="@color/transparent"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="109dp"
-            android:layout_height="64dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="137dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="137dp"
-            app:srcCompat="@drawable/logotrans" />
-
-        <ImageButton
-            android:id="@+id/TickTokBtn"
-            android:layout_width="49dp"
+            android:id="@+id/sendBtn"
+            android:layout_width="36dp"
             android:layout_height="36dp"
-            android:layout_below="@+id/textView2"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="155dp"
-            android:layout_marginTop="17dp"
-            android:layout_marginRight="80dp"
-            android:layout_toEndOf="@+id/InstagramBtn"
-            android:background="@android:color/transparent"
-            android:contentDescription="TickTokBtn"
-            android:scaleType="fitCenter"
-            android:src="@drawable/tiktok"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:layout_marginLeft="315dp"
+            app:srcCompat="@drawable/arrow" />
 
-        <ImageButton
-            android:id="@+id/InstagramBtn"
-            android:layout_width="49dp"
-            android:layout_height="36dp"
-            android:layout_below="@+id/textView2"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="68dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="17dp"
-
-            android:layout_marginRight="80dp"
-            android:background="@android:color/transparent"
-            android:contentDescription="InstagramBtn"
-            android:scaleType="fitCenter"
-            android:src="@drawable/instagram"
-            tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
-
-        <ImageButton
-            android:id="@+id/FaceBookBtn"
-            android:layout_width="49dp"
-            android:layout_height="36dp"
-            android:layout_below="@+id/textView2"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="230dp"
-
-            android:layout_marginTop="17dp"
-
-            android:layout_marginRight="80dp"
-            android:layout_toEndOf="@+id/TickTokBtn"
-            android:background="@android:color/transparent"
-            android:contentDescription="Facebook"
-            android:scaleType="fitCenter"
-            android:src="@drawable/facebook"
-            tools:ignore="TouchTargetSizeCheck" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="248dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp">
 
 
-        <ImageButton
-            android:id="@+id/linkedin"
-            android:layout_width="49dp"
-            android:layout_height="36dp"
-            android:layout_below="@+id/textView2"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="300dp"
-            android:layout_marginTop="17dp"
-            android:layout_marginRight="80dp"
-            android:layout_toEndOf="@+id/FaceBookBtn"
-            android:background="@android:color/transparent"
-            android:contentDescription="linkedin"
-            android:scaleType="fitCenter"
-            android:src="@drawable/linkedin"
-            tools:ignore="TouchTargetSizeCheck" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="109dp"
+                android:layout_height="64dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="137dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="137dp"
+                app:srcCompat="@drawable/logotrans" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="236dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView2"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="83dp"
-            android:layout_marginLeft="85dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="83dp"
-            android:gravity="center"
-            android:text="@string/contactdetails"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            <ImageButton
+                android:id="@+id/TickTokBtn"
+                android:layout_width="49dp"
+                android:layout_height="36dp"
+                android:layout_below="@+id/textView2"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="155dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginRight="80dp"
+                android:layout_toEndOf="@+id/InstagramBtn"
+                android:background="@android:color/transparent"
+                android:contentDescription="TickTokBtn"
+                android:scaleType="fitCenter"
+                android:src="@drawable/tiktok"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <ImageButton
+                android:id="@+id/InstagramBtn"
+                android:layout_width="49dp"
+                android:layout_height="36dp"
+                android:layout_below="@+id/textView2"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="68dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="17dp"
+
+                android:layout_marginRight="80dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="InstagramBtn"
+                android:scaleType="fitCenter"
+                android:src="@drawable/instagram"
+                tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
+
+            <ImageButton
+                android:id="@+id/FaceBookBtn"
+                android:layout_width="49dp"
+                android:layout_height="36dp"
+                android:layout_below="@+id/textView2"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="230dp"
+
+                android:layout_marginTop="17dp"
+
+                android:layout_marginRight="80dp"
+                android:layout_toEndOf="@+id/TickTokBtn"
+                android:background="@android:color/transparent"
+                android:contentDescription="Facebook"
+                android:scaleType="fitCenter"
+                android:src="@drawable/facebook"
+                tools:ignore="TouchTargetSizeCheck" />
 
 
-    </RelativeLayout>
+            <ImageButton
+                android:id="@+id/linkedin"
+                android:layout_width="49dp"
+                android:layout_height="36dp"
+                android:layout_below="@+id/textView2"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="300dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginRight="80dp"
+                android:layout_toEndOf="@+id/FaceBookBtn"
+                android:background="@android:color/transparent"
+                android:contentDescription="linkedin"
+                android:scaleType="fitCenter"
+                android:src="@drawable/linkedin"
+                tools:ignore="TouchTargetSizeCheck" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="355dp"
-        android:layout_height="61dp"
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="236dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView2"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="83dp"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="83dp"
+                android:gravity="center"
+                android:text="@string/contactdetails"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-        android:layout_marginBottom="40dp"
-        android:layout_gravity="center"
-        android:background="@drawable/navdesign"
-        app:itemIconTint="@color/white"
-        app:labelVisibilityMode="unlabeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="355dp"
+            android:layout_height="61dp"
+
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/navdesign"
+            app:itemIconTint="@color/white"
+            app:labelVisibilityMode="unlabeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/bottom_nav_menu" />
 
 
-</LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
