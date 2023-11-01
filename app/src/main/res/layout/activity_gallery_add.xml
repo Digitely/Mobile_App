@@ -13,25 +13,23 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="256dp"
-        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/selectFileButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <Button
         android:id="@+id/selectFileButton"
-        android:layout_width="372dp"
-        android:layout_height="wrap_content"
+        android:layout_width="363dp"
+        android:layout_height="59dp"
         android:layout_marginStart="17dp"
         android:layout_marginEnd="6dp"
-        android:layout_marginBottom="15dp"
         android:text="Select File"
-        app:layout_constraintBottom_toTopOf="@+id/uploadButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/uploadButton"
@@ -42,9 +40,8 @@
         android:text="Upload"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectFileButton"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.651" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

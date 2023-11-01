@@ -26,45 +26,30 @@
 
 
     <Button
-        android:id="@+id/viewEvent"
+        android:id="@+id/counter"
         android:layout_width="279dp"
         android:layout_height="47dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/button"
-        android:text="@string/manage_events"
+        android:text="Update counter"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintBottom_toTopOf="@+id/ADDGalary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.062"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <Button
-        android:id="@+id/viewVolunteers"
-        android:layout_width="279dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/button"
-        android:text="@string/view_volunteers"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewEvent"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/ADDGalary"
         android:layout_width="279dp"
         android:layout_height="47dp"
+        android:layout_marginBottom="56dp"
         android:background="@drawable/button"
-        android:text="Add Gallary"
+        android:text="Upload images"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewVolunteers"
-        app:layout_constraintVertical_bias="0.468"
         tools:ignore="TouchTargetSizeCheck" />
 
     <ImageView

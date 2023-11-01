@@ -23,14 +23,16 @@ class AdminHome : AppCompatActivity() {
         bottomNavigationView.selectedItemId = R.id.navigation_home
 
         // Initialize the button using findViewById
-        viewEventButton = findViewById(R.id.viewEvent)
+      //  viewEventButton = findViewById(R.id.viewEvent)
 
         // Set an OnClickListener for the button
-        viewEventButton.setOnClickListener {
+       /* viewEventButton.setOnClickListener {
             // Start the AdminEventsActivity when the button is clicked
             val intent = Intent(this, admin_events::class.java)
             startActivity(intent)
                          }
+                         */
+
 
             val textViewLogout = findViewById<TextView>(R.id.textViewLogout);
 
@@ -41,14 +43,16 @@ class AdminHome : AppCompatActivity() {
                 startActivity(intent) // Start the login page
             }
 
-            viewVolunteersButton = findViewById(R.id.viewVolunteers)
+           // viewVolunteersButton = findViewById(R.id.viewVolunteers)
 
             // Set OnClickListener for the viewVolunteersButton
-            viewVolunteersButton.setOnClickListener {
+          /*  viewVolunteersButton.setOnClickListener {
                 // Handle button click here
                 val intent = Intent(this, admin_volunteers::class.java)
                 startActivity(intent)
             }
+            */
+
         AddGallart = findViewById(R.id.ADDGalary)
 
         // Set OnClickListener for the viewVolunteersButton
