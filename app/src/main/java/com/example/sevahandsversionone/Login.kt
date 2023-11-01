@@ -122,10 +122,23 @@ class Login : AppCompatActivity() {
       // Sign in user with Firebase Authentication
       mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
         if (task.isSuccessful) {
+          val currentUser = mAuth.currentUser
+
+
           // Login successful, navigate to Home activity
-          val intent = Intent(this@Login, Home::class.java)
-          startActivity(intent)
-          finish()
+          val userEmailAddress = currentUser?.email
+
+          if (userEmailAddress == "admin@sevahands.com") {
+            // If the user's email is admin@sevahands.com, redirect to the admin page
+            val adminIntent = Intent(this, AdminHome::class.java)
+            startActivity(adminIntent)
+          } else {
+            // If the user's email is not admin@sevahands.com, redirect to the home page
+            val homeIntent = Intent(this, Home::class.java)
+            startActivity(homeIntent)
+          }
+
+
         } else {
           // Login unsuccessful, display error message
           Toast.makeText(this, "Login Unsuccessful! Please try again.", Toast.LENGTH_SHORT).show()
