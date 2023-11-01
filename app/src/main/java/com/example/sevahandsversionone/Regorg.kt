@@ -36,6 +36,14 @@ class Regorg : AppCompatActivity() {
       regbtn.setOnClickListener{
         registerUser()
         }
+
+      val companyTextView = findViewById<TextView>(R.id.indivText)
+
+      companyTextView.setOnClickListener {
+        val intent = Intent(this, Regindiv::class.java)
+        startActivity(intent)
+      }
+
     }
   private fun registerUser() {
     try {
