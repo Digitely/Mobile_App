@@ -12,6 +12,8 @@ import com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Label
 class AdminHome : AppCompatActivity() {
     private lateinit var viewEventButton: Button // Declare the button variable
     private lateinit var viewVolunteersButton: Button
+    private lateinit var AddGallart: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,7 @@ class AdminHome : AppCompatActivity() {
                          }
 
             val textViewLogout = findViewById<TextView>(R.id.textViewLogout);
+
             textViewLogout.setOnClickListener {
                 // Handle the button click here
                 FirebaseAuth.getInstance().signOut();
@@ -46,7 +49,14 @@ class AdminHome : AppCompatActivity() {
                 val intent = Intent(this, admin_volunteers::class.java)
                 startActivity(intent)
             }
+        AddGallart = findViewById(R.id.ADDGalary)
 
+        // Set OnClickListener for the viewVolunteersButton
+        AddGallart.setOnClickListener {
+            // Handle button click here
+            val intent = Intent(this, GalleryAdd::class.java)
+            startActivity(intent)
+        }
 
 
 
