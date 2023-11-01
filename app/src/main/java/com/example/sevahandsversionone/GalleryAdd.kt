@@ -27,7 +27,7 @@ class GalleryAdd : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gallary)
+        setContentView(R.layout.activity_gallery_add)
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -59,6 +59,12 @@ class GalleryAdd : AppCompatActivity() {
             Log.e("Gallary", "Error listing files: ${exception.message}")
             exception.printStackTrace()
         }
+        selectFileButton = findViewById(R.id.selectFileButton)
+        selectFileButton.setOnClickListener {
+            // Call the upload function to start the file upload process
+            upload()
+        }
+
     }
 
 
