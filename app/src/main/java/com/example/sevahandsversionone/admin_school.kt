@@ -30,6 +30,14 @@ class admin_school : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
 
+                R.id.navigation_volunteers -> {
+                    startActivity(Intent(applicationContext, admin_volunteers::class.java))
+                    overridePendingTransition(R.transition.right, R.transition.left)
+                    finish()
+                    return@setOnItemSelectedListener true
+                }
+
+
 
             }
             return@setOnItemSelectedListener false
