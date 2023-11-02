@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
@@ -23,6 +24,9 @@ class admin_events : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_events)
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
+        bottomNavigationView.selectedItemId = R.id.navigation_home
 
         val buttonAddEventPage = findViewById<Button>(R.id.buttonAddEventPage)
         buttonAddEventPage.setOnClickListener {
@@ -93,6 +97,36 @@ class admin_events : AppCompatActivity() {
                 // Handle failures
                 // You can add logging or error handling here
             }
+
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_events -> {
+                    return@setOnItemSelectedListener true
+                }
+                R.id.navigation_volunteers -> {
+                    startActivity(Intent(applicationContext, admin_volunteers::class.java))
+                    overridePendingTransition(R.transition.right, R.transition.left)
+                    finish()
+                    return@setOnItemSelectedListener true
+                }
+                R.id.navigation_home -> {
+                    startActivity(Intent(applicationContext, AdminHome::class.java))
+                    overridePendingTransition(R.transition.right, R.transition.left)
+                    finish()
+                    return@setOnItemSelectedListener true
+                }
+                R.id.navigation_school -> {
+                    startActivity(Intent(applicationContext, admin_school::class.java))
+                    overridePendingTransition(R.transition.right, R.transition.left)
+                    finish()
+                    return@setOnItemSelectedListener true
+                }
+
+
+            }
+            return@setOnItemSelectedListener false
+        }
 
 
 

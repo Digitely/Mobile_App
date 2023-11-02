@@ -28,7 +28,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewEvents"
         android:layout_width="match_parent"
-        android:layout_height="505dp"
+        android:layout_height="476dp"
         android:background="@color/white" />
 
     <Button
@@ -37,16 +37,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
         android:layout_marginBottom="14dp"
-        android:layout_marginLeft="193dp"
+        android:layout_gravity="center"
         android:background="@drawable/button"
         android:onClick="navigateToAddEventPage"
         android:text="Add Event" />
 
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logotrans" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="355dp"
+        android:layout_height="61dp"
+        android:background="@drawable/navdesign"
+        app:itemIconTint="@color/white"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/admin_nav_menu" />
 
 
 </LinearLayout>

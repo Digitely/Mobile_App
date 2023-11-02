@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,34 +8,43 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:background="@drawable/bgevents"
-    tools:context=".admin_volunteers">
+    tools:context=".schools">
+
+
+
+    <!-- RecyclerView to display events -->
+
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Volunteers for upcoming events:"
+        android:text="Schools supported by Seva Hands:"
         android:textColor="@color/black" />
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="560dp"
+        android:layout_height="541dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
         android:background="@color/white" />
 
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="355dp"
-        android:layout_height="61dp"
-        android:background="@drawable/navdesign"
-        app:itemIconTint="@color/white"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/admin_nav_menu" />
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logotrans" />
+
+
+
 
 
 </LinearLayout>
+
+
+
+

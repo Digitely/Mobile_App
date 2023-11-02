@@ -46,7 +46,7 @@ class DashBoard : AppCompatActivity() {
 
         LocationbtnimageView.setOnClickListener {
             // Navigate to the EventsActivity when the eventsbtnImageView is clicked
-            val intent = Intent(this@DashBoard, Events::class.java)
+            val intent = Intent(this@DashBoard, schools::class.java)
             startActivity(intent)
         }
 

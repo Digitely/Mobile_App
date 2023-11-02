@@ -20,6 +20,11 @@
         android:title="Manage Volunteers" />
 
 
+    <item
+        android:id="@+id/navigation_school"
+        android:icon="@drawable/baseline_school_24"
+        android:title="Manage Schools" />
+
 
 
 </menu>

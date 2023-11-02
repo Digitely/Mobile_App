@@ -66,10 +66,11 @@ class Login : AppCompatActivity() {
             .addOnCompleteListener { task ->
               if (task.isSuccessful) {
                 // Password reset email sent successfully
-                // Handle success, show a toast message, etc.
+                Toast.makeText(getApplicationContext(), "Password reset email sent successfully", Toast.LENGTH_SHORT).show();
               } else {
                 // Password reset email failed
                 // Handle failure, show a toast message, etc.
+                Toast.makeText(getApplicationContext(), "Password reset email failed", Toast.LENGTH_SHORT).show();
               }
             }
         })

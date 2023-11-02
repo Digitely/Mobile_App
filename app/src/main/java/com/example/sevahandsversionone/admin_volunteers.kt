@@ -1,5 +1,6 @@
 package com.example.sevahandsversionone
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.*
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
@@ -23,6 +25,9 @@ class admin_volunteers : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_volunteers)
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
+        bottomNavigationView.selectedItemId = R.id.navigation_home
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -65,6 +70,35 @@ class admin_volunteers : AppCompatActivity() {
 
         // Add the ValueEventListener to the database reference
         database.addValueEventListener(valueEventListener)
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_volunteers -> {
+                    return@setOnItemSelectedListener true
+                }
+                R.id.navigation_events -> {
+                    startActivity(Intent(applicationContext, admin_events::class.java))
+                    overridePendingTransition(R.transition.right, R.transition.left)
+                    finish()
+                    return@setOnItemSelectedListener true
+                }
+                R.id.navigation_home -> {
+                    startActivity(Intent(applicationContext, AdminHome::class.java))
+                    overridePendingTransition(R.transition.right, R.transition.left)
+                    finish()
+                    return@setOnItemSelectedListener true
+                }
+                R.id.navigation_school -> {
+                    startActivity(Intent(applicationContext, admin_school::class.java))
+                    overridePendingTransition(R.transition.right, R.transition.left)
+                    finish()
+                    return@setOnItemSelectedListener true
+                }
+
+
+            }
+            return@setOnItemSelectedListener false
+        }
     }
     private fun decodeEmail(encodedEmail: String): String {
         return String(Base64.decode(encodedEmail, Base64.NO_WRAP))

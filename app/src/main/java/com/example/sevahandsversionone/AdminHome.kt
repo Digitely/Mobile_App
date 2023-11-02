@@ -81,6 +81,12 @@ class AdminHome : AppCompatActivity() {
                 finish()
                 return@setOnItemSelectedListener true
             }
+            R.id.navigation_school -> {
+                startActivity(Intent(applicationContext, admin_school::class.java))
+                overridePendingTransition(R.transition.right, R.transition.left)
+                finish()
+                return@setOnItemSelectedListener true
+            }
 
 
         }
