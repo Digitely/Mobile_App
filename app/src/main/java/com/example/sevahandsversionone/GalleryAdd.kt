@@ -7,7 +7,9 @@ import android.os.Bundle
 import android.provider.OpenableColumns
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.util.FileUtil
@@ -21,7 +23,7 @@ import java.io.File
 class GalleryAdd : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var selectFileButton: Button
-    private lateinit var uploadButton: Button
+   // private lateinit var uploadButton: Button
     private lateinit var fileAdapter: FileAdapter
     private val uploadedFiles = mutableListOf<UploadedFile>()
 
@@ -30,7 +32,8 @@ class GalleryAdd : AppCompatActivity() {
         setContentView(R.layout.activity_gallery_add)
 
         recyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = GridLayoutManager(this, 3)
+       // recyclerView.layoutManager = LinearLayoutManager(this)
         fileAdapter = FileAdapter(uploadedFiles)
         recyclerView.adapter = fileAdapter
 

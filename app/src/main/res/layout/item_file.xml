@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="16dp">
-
+    android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="match_parent"
+        android:id="@+id/fileImageView"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:scaleType="centerCrop" />
+
+    <ImageButton
+        android:id="@+id/delete"
+        android:layout_width="31dp"
         android:layout_height="wrap_content"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_alignStart="@id/fileImageView"
+        android:layout_alignEnd="@id/fileImageView"
+        android:layout_alignBottom="@id/fileImageView"
+
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/transparent"
+        android:src="@drawable/baseline_delete_24"
+        android:text="delete"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/fileNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp" />
-
-    <Button
-        android:id="@+id/delete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="delete" />
-
-
-
-
-</LinearLayout>
+        android:layout_width="130dp"
+        android:layout_height="10dp"
+        android:layout_below="@id/fileImageView"
+        android:layout_marginTop="0dp"
+        android:textSize="5dp" />
+</RelativeLayout>
