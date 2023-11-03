@@ -36,11 +36,16 @@
     <!-- Button to add school -->
 
     <Button
-        android:id="@+id/BtnImage"
+        android:id="@+id/btnSelectImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="upload School Image and create school"/>
+        android:text="Select Image" />
 
+    <Button
+        android:id="@+id/btnCreateSchool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create School" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"

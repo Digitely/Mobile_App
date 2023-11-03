@@ -46,23 +46,33 @@ class AdminSchool : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_school)
 
+        // Initialize UI elements
         editTextSchoolName = findViewById(R.id.editTextSchoolName)
+        val btnSelectImage = findViewById<Button>(R.id.btnSelectImage)
+        val btnCreateSchool = findViewById<Button>(R.id.btnCreateSchool)
 
-        buttonUploadImage = findViewById(R.id.BtnImage)
-
-        buttonUploadImage.setOnClickListener {
+        btnSelectImage.setOnClickListener {
             // Prompt the user to select an image from files
             val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
             pickImage.launch(intent)
         }
+
+        btnCreateSchool.setOnClickListener {
+            // Create/save the school with the entered text and the selected image
+            val schoolName = editTextSchoolName.text.toString().trim()
+
+            if (schoolName.isNotEmpty() && selectedImageUri != null) {
+                // Both school name and image are available, proceed to save to database
+                uploadImageToFirebase()
+            } else {
+                // Handle the case when either the school name or the image is missing
+                Toast.makeText(this, "Please enter a school name and select an image.", Toast.LENGTH_SHORT).show()
+            }
+        }
         fetchSchoolDataFromDatabase()
         setupRecyclerView()
-
-
-
-
-
+        
     }
 
     private fun setupRecyclerView() {
