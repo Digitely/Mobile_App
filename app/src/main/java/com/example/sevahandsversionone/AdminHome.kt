@@ -13,6 +13,7 @@ class AdminHome : AppCompatActivity() {
     private lateinit var viewEventButton: Button // Declare the button variable
     private lateinit var viewVolunteersButton: Button
     private lateinit var AddGallart: Button
+    private lateinit var counter: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +53,15 @@ class AdminHome : AppCompatActivity() {
                 startActivity(intent)
             }
             */
+        counter = findViewById(R.id.Btncounter)
+
+        // Set OnClickListener for the viewVolunteersButton
+        counter.setOnClickListener {
+            // Handle button click here
+            val intent = Intent(this, Counter::class.java)
+            startActivity(intent)
+        }
+
 
         AddGallart = findViewById(R.id.ADDGalary)
 
