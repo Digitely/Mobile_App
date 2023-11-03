@@ -21,8 +21,28 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="560dp"
+        android:layout_height="222dp"
         android:background="@color/white" />
+
+    <!-- EditText for school name -->
+    <EditText
+        android:id="@+id/editTextSchoolName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter School Name"
+        android:inputType="text"/>
+
+    <!-- Button to add school -->
+    <Button
+        android:id="@+id/buttonAddSchool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add School"/>
+    <Button
+        android:id="@+id/BtnImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="upload School Image"/>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

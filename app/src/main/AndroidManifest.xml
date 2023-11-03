@@ -12,24 +12,24 @@
         android:theme="@style/Theme.SevaHandsVersionOne"
         tools:targetApi="31">
         <activity
+            android:name=".AdminSchool"
+            android:exported="false" />
+        <activity
             android:name=".schools"
             android:exported="false"
-            android:label="Supported Schools"/>
+            android:label="Supported Schools" />
         <activity
             android:name=".admin_school"
             android:exported="false"
-            android:label="Supported Schools"/>
-
-    <activity
+            android:label="Supported Schools" />
+        <activity
             android:name=".Counter"
             android:exported="false"
             android:label="Counter" />
-
         <activity
             android:name=".GalleryAdd"
             android:exported="false"
-            android:label="Gallery"/>
-
+            android:label="Gallery" />
         <activity
             android:name=".Gallary"
             android:exported="false"
