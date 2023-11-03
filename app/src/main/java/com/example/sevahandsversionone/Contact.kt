@@ -78,11 +78,12 @@ class Contact : AppCompatActivity() {
             openLink("https://za.linkedin.com/company/seva-hands-enterprise")
         }
     }
-    fun sendEmail( message: String) {
-        val intent = Intent(Intent.ACTION_SENDTO).apply {
-            data = Uri.parse("mailto:sevahands@gmail.com") // Replace with your recipient email address
+    fun sendEmail(message: String) {
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "message/rfc822"
             putExtra(Intent.EXTRA_SUBJECT, "contact us")
             putExtra(Intent.EXTRA_TEXT, message)
+            putExtra(Intent.EXTRA_EMAIL, arrayOf("sevahands@gmail.com")) // Specify recipient email address here
         }
 
         if (intent.resolveActivity(packageManager) != null) {
@@ -92,6 +93,7 @@ class Contact : AppCompatActivity() {
             Toast.makeText(this, "No email app found", Toast.LENGTH_SHORT).show()
         }
     }
+
 
     private fun openLink(url: String) {
         val intent = Intent(Intent.ACTION_VIEW)
