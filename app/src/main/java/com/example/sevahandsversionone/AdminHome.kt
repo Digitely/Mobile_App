@@ -14,7 +14,6 @@ class AdminHome : AppCompatActivity() {
     private lateinit var viewVolunteersButton: Button
     private lateinit var AddGallart: Button
     private lateinit var counter: Button
-    private lateinit var School: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,14 +53,7 @@ class AdminHome : AppCompatActivity() {
                 startActivity(intent)
             }
             */
-        School = findViewById(R.id.BtnSchool)
 
-        // Set OnClickListener for the viewVolunteersButton
-        School.setOnClickListener {
-            // Handle button click here
-            val intent = Intent(this, AdminSchool::class.java)
-            startActivity(intent)
-        }
         counter = findViewById(R.id.Btncounter)
 
         // Set OnClickListener for the viewVolunteersButton
@@ -100,7 +92,7 @@ class AdminHome : AppCompatActivity() {
                 return@setOnItemSelectedListener true
             }
             R.id.navigation_school -> {
-                startActivity(Intent(applicationContext, admin_school::class.java))
+                startActivity(Intent(applicationContext, AdminSchool::class.java))
                 overridePendingTransition(R.transition.right, R.transition.left)
                 finish()
                 return@setOnItemSelectedListener true

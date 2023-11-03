@@ -25,21 +25,6 @@
         app:menu="@menu/admin_nav_menu" />
 
     <Button
-        android:id="@+id/BtnSchool"
-        android:layout_width="279dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/button"
-        android:text="Add School"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/ADDGalary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <Button
         android:id="@+id/Btncounter"
         android:layout_width="279dp"
         android:layout_height="47dp"
