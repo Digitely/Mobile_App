@@ -2,11 +2,14 @@ package com.example.sevahandsversionone
 
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
 class UserEventsAdapter(private var events: List<Event>) : RecyclerView.Adapter<UserEventsAdapter.EventViewHolder>() {
@@ -40,23 +43,17 @@ class UserEventsAdapter(private var events: List<Event>) : RecyclerView.Adapter<
         // Set click listener for the button if needed
         holder.getDirectionsButton.setOnClickListener {
             val location = event.location // Get the location from your Event object
+            Log.d("Location", "Location: $location") // Log the location for debugging purposes
 
             // Create a Uri object for Google Maps with the location query
             val gmmIntentUri = Uri.parse("https://www.google.com/maps/search/?api=1&query=$location")
+            Log.d("Location", "Uri: $gmmIntentUri") // Log the Uri for debugging purposes
 
-            // Create an Intent with action VIEW and the Uri
-            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-
-            // Set the package to Google Maps (optional, ensures it opens in Google Maps even if other map apps are available)
-            mapIntent.setPackage("com.google.android.apps.maps")
-
-            // Check if there is an app to handle this intent before starting the activity
-            if (mapIntent.resolveActivity(holder.itemView.context.packageManager) != null) {
-                holder.itemView.context.startActivity(mapIntent)
-            } else {
-                // Handle the case where there is no activity to handle the intent (e.g., show an error message)
-            }
+            val browserIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+            holder.itemView.context.startActivity(browserIntent)
         }
+
+
     }
 
     override fun getItemCount(): Int {
