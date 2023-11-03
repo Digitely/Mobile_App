@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -75,11 +76,15 @@ class AdminSchool : AppCompatActivity() {
             imageRef.downloadUrl.addOnSuccessListener { uri ->
                 val imageUrl = uri.toString()
                 // Now you can use imageUrl, for example, save it to the database
+                Log.d("UploadImage", "Image uploaded successfully. Download URL: $imageUrl")
             }.addOnFailureListener {
                 // Handle failures while getting the download URL
+                Log.e("UploadImage", "Failed to get download URL: ${it.message}")
             }
         }.addOnFailureListener { exception ->
             // Handle failures while uploading the image
+            Log.e("UploadImage", "Image upload failed: ${exception.message}")
         }
     }
+
 }
