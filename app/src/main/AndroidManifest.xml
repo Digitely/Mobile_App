@@ -20,6 +20,11 @@
             android:exported="false"
             android:label="Supported Schools"/>
 
+    <activity
+            android:name=".Counter"
+            android:exported="false"
+            android:label="Counter" />
+
         <activity
             android:name=".GalleryAdd"
             android:exported="false"
