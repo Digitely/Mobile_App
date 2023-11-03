@@ -4,18 +4,27 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import java.util.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 
 class AdminSchool : AppCompatActivity() {
     private lateinit var editTextSchoolName: EditText
     private lateinit var buttonAddSchool: Button
     private lateinit var buttonUploadImage: Button
+    private lateinit var schoolAdapter: SchoolAdapter
+    private val schoolList: MutableList<SchoolData> = mutableListOf() // Initialize an empty list
 
     private val storageRef = FirebaseStorage.getInstance().reference
     private var selectedImageUri: Uri? = null
@@ -38,7 +47,7 @@ class AdminSchool : AppCompatActivity() {
         setContentView(R.layout.activity_admin_school)
 
         editTextSchoolName = findViewById(R.id.editTextSchoolName)
-        buttonAddSchool = findViewById(R.id.buttonAddSchool)
+
         buttonUploadImage = findViewById(R.id.BtnImage)
 
         buttonUploadImage.setOnClickListener {
@@ -47,24 +56,48 @@ class AdminSchool : AppCompatActivity() {
             intent.type = "image/*"
             pickImage.launch(intent)
         }
+        fetchSchoolDataFromDatabase()
+        setupRecyclerView()
 
-        buttonAddSchool.setOnClickListener {
-            val schoolName = editTextSchoolName.text.toString().trim()
 
-            // Check if school name is not empty and an image is selected
-            if (schoolName.isNotEmpty() && selectedImageUri != null) {
-                uploadImageToFirebase()
-            } else {
-                // Handle empty school name input or no image selected
-                if (schoolName.isEmpty()) {
-                    editTextSchoolName.error = "Please enter a school name"
-                } else {
-                    // Show a toast message indicating that the user needs to add an image
-                    Toast.makeText(this, "Please add an image", Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
+
+
+
     }
+
+    private fun setupRecyclerView() {
+        schoolAdapter = SchoolAdapter( schoolList , true)
+        val recyclerView = findViewById<RecyclerView>(R.id.SchoolAdmin)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = schoolAdapter
+    }
+    private fun fetchSchoolDataFromDatabase() {
+        val databaseReference = FirebaseDatabase.getInstance().reference.child("schools")
+
+        databaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                schoolList.clear() // Clear the existing list before adding new data
+
+                for (schoolSnapshot in snapshot.children) {
+                    val school = schoolSnapshot.getValue(SchoolData::class.java)
+                    if (school != null) {
+                        schoolList.add(school) // Add each school to the list
+                        Log.d("school", school.toString())
+                    }
+                }
+
+                Log.d("AdminSchool", "Number of schools fetched: ${schoolList.size}")
+                schoolAdapter.notifyDataSetChanged() // Notify the adapter that the data has changed
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("AdminSchool", "Database fetch cancelled: ${error.message}")
+                // Handle errors, if any
+            }
+        })
+    }
+
+
 
     private fun uploadImageToFirebase() {
         val imageRef = storageRef.child("images/${UUID.randomUUID()}.jpg")
@@ -75,11 +108,34 @@ class AdminSchool : AppCompatActivity() {
             imageRef.downloadUrl.addOnSuccessListener { uri ->
                 val imageUrl = uri.toString()
                 // Now you can use imageUrl, for example, save it to the database
+                saveSchoolToDatabase(imageUrl)
+                Log.d("UploadImage", "Image uploaded successfully. Download URL: $imageUrl")
             }.addOnFailureListener {
                 // Handle failures while getting the download URL
+                Log.e("UploadImage", "Failed to get download URL: ${it.message}")
             }
         }.addOnFailureListener { exception ->
             // Handle failures while uploading the image
+            Log.e("UploadImage", "Image upload failed: ${exception.message}")
         }
     }
+
+    private fun saveSchoolToDatabase(imageUrl: String) {
+        val schoolName = editTextSchoolName.text.toString().trim()
+        val schoolId = UUID.randomUUID().toString() // Generate a unique ID for the school
+
+        val school = SchoolData(schoolId, schoolName, imageUrl)
+
+        // Save the school object to the "schools" node in the database
+        val databaseReference = FirebaseDatabase.getInstance().reference.child("schools")
+        databaseReference.child(schoolId).setValue(school)
+            .addOnSuccessListener {
+                Log.d("SaveToDatabase", "School data saved successfully.")
+            }
+            .addOnFailureListener { exception ->
+                Log.e("SaveToDatabase", "Failed to save school data: ${exception.message}")
+            }
+    }
+
+
 }
