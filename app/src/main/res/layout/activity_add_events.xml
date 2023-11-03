@@ -59,13 +59,15 @@
 
     <Button
         android:id="@+id/buttonSelectDate"
-        android:layout_width="174dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="98dp"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
         android:layout_marginTop="14dp"
         android:background="@drawable/otherbuttons"
         android:drawableLeft="@drawable/baseline_calendar_month_24"
-        android:text="@string/select_date" />
+        android:text="@string/select_date"
+        android:textSize="12dp"
+        tools:ignore="TextSizeCheck" />
 
 
     <Button
@@ -74,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="1dp"
-        android:layout_marginTop="325dp"
+        android:layout_marginTop="305dp"
         android:background="@drawable/button"
         android:text="Add Event" />
 

@@ -104,28 +104,4 @@ class AdminHome : AppCompatActivity() {
     }
 }
 
-private val navListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.navigation_home -> {
-                    // Start AlgorithmActivity
-                    val intent = Intent(this, Home::class.java)
-                    startActivity(intent)
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.navigation_volunteers -> {
-                    // Start CourseActivity
-                    val intent = Intent(this, admin_volunteers::class.java)
-                    startActivity(intent)
-                    return@OnNavigationItemSelectedListener true
-                }
-
-                R.id.navigation_events -> {
-                    // Start ProfileActivity
-                    val intent = Intent(this, admin_events::class.java)
-                    startActivity(intent)
-                    return@OnNavigationItemSelectedListener true
-                }
-                else -> return@OnNavigationItemSelectedListener false
-            }
-    }
 }

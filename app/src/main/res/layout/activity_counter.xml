@@ -6,35 +6,89 @@
     android:layout_height="match_parent"
     tools:context=".Counter">
 
+
     <TextView
         android:id="@+id/counterTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="408dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bgcolor"
+        android:text="Update the number of sandwiches made by Seva Hands: "
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
-
-    <Button
-        android:id="@+id/incrementButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Increment"
-        app:layout_constraintTop_toBottomOf="@id/counterTextView"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"/>
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="244dp" />
 
     <Button
         android:id="@+id/decrementButton"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/otherbuttons"
+        android:text="Decrement"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/incrementButton"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/otherbuttons"
+        android:text="Increment"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintEnd_toStartOf="@+id/decrementButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Decrement"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/redpink"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/incrementButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.548"
-        app:layout_constraintStart_toEndOf="@+id/incrementButton"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/counterTextView" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="406dp"
+        android:layout_height="244dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/service3" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="396dp"
+        android:layout_height="118dp"
+        android:gravity="center"
+        android:text="To use the counter feature  for tracking the number of sandwiches made,.Use the Increase button  to add sandwiches to the count as you make them. The app allows you  to also use the Decrease button  to subtract sandwiches if an incorrect amount was entered. Regularly update the count.This counter will update the Seva hands website as well"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="472dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="135dp"
+        android:layout_height="107dp"
+        android:foregroundGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logotrans" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
