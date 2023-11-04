@@ -52,7 +52,7 @@ class SchoolAdapter(private val schoolItems: List<SchoolData>, private val isAdm
             }
 
             fun bind(schoolItem: SchoolData) {
-                schoolNameTextView.text = "School Name: ${schoolItem.schoolName}"
+                schoolNameTextView.text = " ${schoolItem.schoolName}"
 
                 // Load school image using Glide library
                 Glide.with(itemView.context)

@@ -24,23 +24,21 @@ class AdminSchool : AppCompatActivity() {
     private lateinit var buttonAddSchool: Button
     private lateinit var buttonUploadImage: Button
     private lateinit var schoolAdapter: SchoolAdapter
-    private val schoolList: MutableList<SchoolData> = mutableListOf() // Initialize an empty list
+    private val schoolList: MutableList<SchoolData> = mutableListOf()
 
     private val storageRef = FirebaseStorage.getInstance().reference
     private var selectedImageUri: Uri? = null
 
-    private val pickImage =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                val imageUri: Uri? = result.data?.data
-                if (imageUri != null) {
-                    // User selected an image
-                    selectedImageUri = imageUri
-                    // Now you can upload selectedImageUri to Firebase Storage when the button is clicked
-                    uploadImageToFirebase()
-                }
+    private val pickImage = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val imageUri: Uri? = result.data?.data
+            if (imageUri != null) {
+                // User selected an image
+                selectedImageUri = imageUri
+                // Now you can upload selectedImageUri to Firebase Storage when the button is clicked
             }
         }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,23 +62,24 @@ class AdminSchool : AppCompatActivity() {
 
             if (schoolName.isNotEmpty() && selectedImageUri != null) {
                 // Both school name and image are available, proceed to save to database
-                uploadImageToFirebase()
+                uploadImageToFirebase(schoolName, selectedImageUri!!)
             } else {
                 // Handle the case when either the school name or the image is missing
                 Toast.makeText(this, "Please enter a school name and select an image.", Toast.LENGTH_SHORT).show()
             }
         }
+
         fetchSchoolDataFromDatabase()
         setupRecyclerView()
-        
     }
 
     private fun setupRecyclerView() {
-        schoolAdapter = SchoolAdapter( schoolList , true)
+        schoolAdapter = SchoolAdapter(schoolList, true)
         val recyclerView = findViewById<RecyclerView>(R.id.SchoolAdmin)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = schoolAdapter
     }
+
     private fun fetchSchoolDataFromDatabase() {
         val databaseReference = FirebaseDatabase.getInstance().reference.child("schools")
 
@@ -107,18 +106,16 @@ class AdminSchool : AppCompatActivity() {
         })
     }
 
-
-
-    private fun uploadImageToFirebase() {
+    private fun uploadImageToFirebase(schoolName: String, imageUri: Uri) {
         val imageRef = storageRef.child("images/${UUID.randomUUID()}.jpg")
-        val uploadTask = imageRef.putFile(selectedImageUri!!)
+        val uploadTask = imageRef.putFile(imageUri)
 
         uploadTask.addOnSuccessListener { taskSnapshot ->
             // Image uploaded successfully, now get the download URL
             imageRef.downloadUrl.addOnSuccessListener { uri ->
                 val imageUrl = uri.toString()
                 // Now you can use imageUrl, for example, save it to the database
-                saveSchoolToDatabase(imageUrl)
+                saveSchoolToDatabase(schoolName, imageUrl)
                 Log.d("UploadImage", "Image uploaded successfully. Download URL: $imageUrl")
             }.addOnFailureListener {
                 // Handle failures while getting the download URL
@@ -130,8 +127,7 @@ class AdminSchool : AppCompatActivity() {
         }
     }
 
-    private fun saveSchoolToDatabase(imageUrl: String) {
-        val schoolName = editTextSchoolName.text.toString().trim()
+    private fun saveSchoolToDatabase(schoolName: String, imageUrl: String) {
         val schoolId = UUID.randomUUID().toString() // Generate a unique ID for the school
 
         val school = SchoolData(schoolId, schoolName, imageUrl)
@@ -146,6 +142,4 @@ class AdminSchool : AppCompatActivity() {
                 Log.e("SaveToDatabase", "Failed to save school data: ${exception.message}")
             }
     }
-
-
 }

@@ -5,15 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:padding="16dp"
     android:orientation="vertical">
 
 
-
-
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="326dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:background="@color/redish"
+        android:orientation="horizontal"
         android:padding="16dp">
 
 
@@ -21,33 +21,33 @@
 
         <ImageView
             android:id="@+id/SChoolImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             tools:srcCompat="@tools:sample/avatars" />
 
-
-        <TextView
-            android:id="@+id/TVSchool"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="School Name:"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
 
         <!-- Edit and Delete Buttons -->
 
 
+        <TextView
+            android:id="@+id/TVSchool"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="5dp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/buttonDeleteEvent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="125dp"
-            android:layout_marginTop="0dp"
+            android:layout_width="54dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:background="@drawable/button"
-            android:text="Delete"
-            android:textSize="14dp"
-            tools:ignore="TextSizeCheck" />
+            android:drawableLeft="@drawable/white_bin"
+            android:textSize="14sp"
+            tools:ignore="TextSizeCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
     </LinearLayout>
