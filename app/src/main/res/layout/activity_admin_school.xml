@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp"
     android:paddingTop="?attr/actionBarSize"
     android:background="@drawable/bgevents"
@@ -12,88 +12,75 @@
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="Schools that we support:"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
-    <!-- EditText for school name -->
-
-    <!-- Button to add school -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/SchoolAdmin"
         android:layout_width="384dp"
         android:layout_height="467dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
         android:background="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btnSelectImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/editTextSchoolName"
-        android:layout_width="247dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:hint="Enter School Name"
         android:inputType="text"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCreateSchool"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.024"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SchoolAdmin"
-        app:layout_constraintVertical_bias="0.571" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSelectImage"
+        app:layout_constraintHorizontal_bias="0.2" />
 
     <Button
         android:id="@+id/btnSelectImage"
-        android:layout_width="113dp"
-        android:layout_height="38dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="191dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="480dp"
         android:background="@drawable/button"
         android:text="Select Image"
-        android:textSize="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCreateSchool"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toEndOf="@+id/editTextSchoolName"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.982"
-        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <Button
         android:id="@+id/btnCreateSchool"
-        android:layout_width="143dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button"
         android:text="Create School"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints,TextSizeCheck,TouchTargetSizeCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSchoolName" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
-        android:layout_width="355dp"
+        android:layout_width="0dp"
         android:layout_height="61dp"
         android:layout_gravity="center"
         android:background="@drawable/navdesign"
         app:itemIconTint="@color/white"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCreateSchool"
+        app:layout_constraintVertical_bias="0.367"
         app:menu="@menu/admin_nav_menu" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
